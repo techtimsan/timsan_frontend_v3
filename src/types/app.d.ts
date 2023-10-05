@@ -6,6 +6,11 @@ export type ProvidersProps = {
   children: ReactNode
 }
 
+export type LoginProps = {
+  email: string
+  password: string
+}
+
 export type RegisterProps = {
   fullname: string
   email: string

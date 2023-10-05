@@ -1,26 +1,18 @@
 "use client"
 
 import { CustomInput } from "@/components/custom"
-import { CustomInputProps, RegisterProps } from "@/types/app"
+import { CustomInputProps, LoginProps } from "@/types/app"
 import { useForm } from "react-hook-form"
 
 const FormFields = () => {
-  const defaultValues: RegisterProps = {
-    fullname: "",
+  const defaultValues: LoginProps = {
     email: "",
     password: "",
   }
-  const { register } = useForm<RegisterProps>({
+  const { register } = useForm<LoginProps>({
     defaultValues,
   })
-  const formFields: CustomInputProps<RegisterProps>[] = [
-    {
-      name: "fullname",
-      required: true,
-      label: "Full Name",
-      type: "text",
-      register,
-    },
+  const formFields: CustomInputProps<LoginProps>[] = [
     {
       name: "email",
       type: "email",
@@ -30,14 +22,11 @@ const FormFields = () => {
     },
     {
       name: "password",
+      type: "password",
       required: true,
       label: "Password",
-      type: "password",
       register,
     },
-    //   {
-    //     name:
-    // }
   ]
   return (
     <div>

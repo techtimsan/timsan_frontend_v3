@@ -13,12 +13,14 @@ const CustomInput = <T extends FieldValues>({
   required,
 }: CustomInputProps<T>) => {
   return (
-      <Input
-          className="my-2.5"
+    <Input
+      label={label}
+      className="my-2.5 text-gray-900"
+      isRequired={required}
       type={type}
       id={label ? `${label.toLowerCase()}` : name}
       placeholder={placeholder}
-      {...register(name, { required: required })}
+      {...register(name)}
     />
   )
 }
