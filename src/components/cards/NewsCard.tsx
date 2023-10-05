@@ -12,7 +12,7 @@ const NewsCard = ({ thumbnailUrl, title, content, contentUrl }: NewsProps) => {
   return (
     <Card className="my-3.5">
       <CardHeader className="p-0">
-        <Image src={thumbnailUrl} alt={title} className="w-full h-[200px] object-cover object-center" />
+        <Image src={thumbnailUrl} alt={title} className="w-full h-[200px] object-cover object-center rounded-none" />
       </CardHeader>
       <CardBody className="space-y-3.5">
         <h3 className="text-green font-semibold text-lg truncate">{title}</h3>

@@ -14,6 +14,9 @@ const config: Config = {
         green: "#38A926",
         "timsan-gray": "#1A1A1A",
       },
+      backgroundImage: {
+        "tilet-hero": "url('/assets/tilet_heroBG.png')",
+      },
     },
   },
   darkMode: "class",
