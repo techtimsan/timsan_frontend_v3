@@ -29,7 +29,7 @@ const Footer = () => {
     },
   ]
   return (
-    <footer className="relative bg-black px-5 text-xs w-screen pt-36 pb-3.5 mt-14">
+    <footer className="relative bg-black px-5 text-xs w-screen pt-36 pb-3.5 mt-40">
       {/* newsletter */}
       <div className="flex w-full items-center justify-center">
         <Newsletter />

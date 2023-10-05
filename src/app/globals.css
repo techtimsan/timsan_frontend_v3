@@ -6,4 +6,12 @@
   .custom__section {
     @apply p-5;
   }
+
+  .custom__section > h3 {
+    @apply text-center;
+  }
+
+  .custom__section > h4 {
+    @apply text-green text-center;
+  }
 }
