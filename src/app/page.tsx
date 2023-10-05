@@ -45,9 +45,11 @@ export default function Home() {
       </section>
 
       {/* google map */}
-      <div>
-        <ChapterMap />
+      <div className="custom__section">
+        <h3>OUR MAP</h3>
+        <h4>Locate a Chapter</h4>
       </div>
+      <ChapterMap />
       <Footer />
     </main>
   )

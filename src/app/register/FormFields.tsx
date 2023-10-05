@@ -34,6 +34,7 @@ const FormFields = () => {
       label: "Password",
       type: "password",
       register,
+      iconRight: true
     },
     //   {
     //     name:

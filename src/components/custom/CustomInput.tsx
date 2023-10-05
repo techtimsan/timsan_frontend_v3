@@ -2,7 +2,9 @@
 
 import { CustomInputProps } from "@/types/app"
 import { Input } from "@nextui-org/input"
+import { useState } from "react"
 import { FieldValues } from "react-hook-form"
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai"
 
 const CustomInput = <T extends FieldValues>({
   name,
@@ -10,16 +12,46 @@ const CustomInput = <T extends FieldValues>({
   register,
   type,
   placeholder,
+  iconLeft,
+  iconRight,
   required,
 }: CustomInputProps<T>) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false) // useMemo?
+
+  const toggleVisibility = () => setIsVisible(!isVisible)
+
   return (
     <Input
       label={label}
-      className="my-2.5 text-gray-900 w-full"
+      labelPlacement="outside"
+      className="mb-6 text-gray-900 w-full"
       isRequired={required}
-      type={type}
+      type={type === "password" && isVisible ? "text" : type}
       id={label ? `${label.toLowerCase()}` : name}
       placeholder={placeholder}
+      endContent={
+        iconRight ? (
+          <button
+            className="focus:outline-none"
+            type="button"
+            onClick={toggleVisibility}
+          >
+            {isVisible ? (
+              <AiFillEye
+                size={25}
+                classname="text-2xl text-default-400 pointer-events-none"
+              />
+            ) : (
+              <AiFillEyeInvisible
+                size={25}
+                classname="text-2xl text-default-400 pointer-events-none"
+              />
+            )}
+          </button>
+        ) : (
+          false
+        )
+      }
       {...register(name)}
     />
   )

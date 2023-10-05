@@ -26,6 +26,8 @@ export type RegisterProps = {
 export type CustomInputProps<T> = {
   // IconLeft?: IconType
   // IconRight?: IconType
+  iconLeft?: boolean
+  iconRight?: boolean
   name: Path<T>
   label?: string
   placeholder?: string
