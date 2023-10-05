@@ -3,7 +3,8 @@ import { Button } from "@nextui-org/button"
 import { Card, CardBody } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
 import courses from "../../data/courses.json"
-import { CourseCard } from "@/components/cards"
+import { CourseCard, FeedbackCard } from "@/components/cards"
+import feedbacks from "../../data/feedbacks.json"
 
 export default function Tilets() {
   const chaptersData = [
@@ -65,6 +66,75 @@ export default function Tilets() {
         <div className="my-5">
           {courses.map((course) => (
             <CourseCard key={course.title} {...course} />
+          ))}
+        </div>
+      </section>
+
+      <section className="custom__section">
+        <h2>Learn Anything</h2>
+        <div className="w-full">
+          <Image
+            src="/assets/tilet_group_IMG.png"
+            alt="Tilet Group Image"
+            className="w-full object-cover object-center h-[500px]"
+          />
+        </div>
+        <h3>Benefit from our online TILETS platform</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod nihil
+          delectus sapiente in, eveniet dolor ducimus consequatur ratione rerum
+          laboriosam harum molestiae eius doloribus ad facilis vLorem ipsum
+          dolor sit amet consectetur adipisicing elit. Quod nihil delectus
+          sapiente in, eveniet dolor ducimus consequatur ratione rerum
+          laboriosam harum molestiae eius doloribus ad facilis
+          voluptatemoluptatem architecto illum? Suscipit magnam aperiam rem at,
+          totam aspernatur officia, quo cumque maxime nulla ducimus explicabo id
+          molestiae?
+        </p>
+
+        {/* info */}
+        <div>
+          <div>
+            <h5>Free crash courses.</h5>
+          </div>
+          <div>
+            <h5>Free Islamic Courses.</h5>
+          </div>
+          <div>
+            <h5>Access to TILETS session of various chapters.</h5>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <Button>Explore Courses</Button>
+          <Button>Access TILETS</Button>
+        </div>
+      </section>
+
+      {/* popular courses */}
+      <section className="custom__section">
+        <h3>Popular Courses</h3>
+        {/* course cards */}
+        <div className="my-5">
+          {courses.splice(0, 2).map((course) => (
+            <CourseCard key={course.title} {...course} />
+          ))}
+        </div>
+      </section>
+
+      {/* tilets sessions */}
+      <section className="custom__section">
+        <h3>TILETS Sessions</h3>
+        <div></div>
+      </section>
+
+      {/* feedback carousel */}
+      <section className="custom__section">
+        <h3>Feedback From Members</h3>
+
+        <div>
+          {feedbacks.map((feedback) => (
+            <FeedbackCard key={feedback.user.name} {...feedback} />
           ))}
         </div>
       </section>

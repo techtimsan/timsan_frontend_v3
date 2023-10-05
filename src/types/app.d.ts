@@ -50,6 +50,15 @@ export type CustomInputProps<T> = {
   // errors?: FieldErrors | undefined
 } & ComponentProps<"input">
 
+export type FeedbackCardProps = {
+  user: {
+    imageUrl: string
+    name: string
+    institution: string
+  }
+  comment: string
+}
+
 export type CustomTabProps = {
   title: string
   tabChildren: JSX.Element[]
