@@ -29,10 +29,12 @@ const Footer = () => {
     },
   ]
   return (
-    <footer className="relative bg-black px-5 text-xs w-screen pt-16 pb-3.5 mt-14">
+    <footer className="relative bg-black px-5 text-xs w-screen pt-36 pb-3.5 mt-14">
       {/* newsletter */}
-      <Newsletter />
-      <section className="grid grid-cols-3">
+      <div className="flex w-full items-center justify-center">
+        <Newsletter />
+      </div>
+      <section className="grid grid-cols-3 pt-5">
         <div className="text-white">
           <Image
             src={timsanLogo}
@@ -59,7 +61,9 @@ const Footer = () => {
           <h3>Quick Links</h3>
           {quickLinks.map(({ title, url }) => (
             <div key={url}>
-              <Link className="text-xs" href={url}>{title}</Link>
+              <Link className="text-xs" href={url}>
+                {title}
+              </Link>
             </div>
           ))}
         </div>

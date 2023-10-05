@@ -15,7 +15,7 @@ const CustomInput = <T extends FieldValues>({
   return (
     <Input
       label={label}
-      className="my-2.5 text-gray-900"
+      className="my-2.5 text-gray-900 w-full"
       isRequired={required}
       type={type}
       id={label ? `${label.toLowerCase()}` : name}

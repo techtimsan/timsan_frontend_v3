@@ -6,6 +6,12 @@ export type ProvidersProps = {
   children: ReactNode
 }
 
+export type ExcoCardProps = {
+  name: string
+  imageUrl: string
+  position: string
+}
+
 export type LoginProps = {
   email: string
   password: string
