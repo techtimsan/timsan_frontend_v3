@@ -12,6 +12,7 @@ const config: Config = {
     extend: {
       colors: {
         green: "#38A926",
+        "timsan-gray": "#1A1A1A",
       },
     },
   },

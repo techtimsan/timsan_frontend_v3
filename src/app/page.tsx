@@ -38,7 +38,7 @@ export default function Home() {
         <h4 className="text-green text-center">Our National Executives</h4>
 
         <div className="grid grid-cols-2 gap-3.5 my-5">
-          {excos.map((exco) => (
+          {excos.splice(0, 4).map((exco) => (
             <ExcoCard key={exco.name} {...exco} />
           ))}
         </div>

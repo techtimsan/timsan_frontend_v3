@@ -10,7 +10,10 @@ const FormFields = () => {
     email: "",
     password: "",
   }
-  const { register } = useForm<RegisterProps>({
+  const {
+    register,
+    formState: { errors },
+  } = useForm<RegisterProps>({
     defaultValues,
   })
   const formFields: CustomInputProps<RegisterProps>[] = [
@@ -34,7 +37,7 @@ const FormFields = () => {
       label: "Password",
       type: "password",
       register,
-      iconRight: true
+      iconRight: true,
     },
     //   {
     //     name:

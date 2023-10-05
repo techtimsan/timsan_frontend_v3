@@ -10,6 +10,7 @@ const CustomInput = <T extends FieldValues>({
   name,
   label,
   register,
+  customStyle,
   type,
   placeholder,
   iconLeft,
@@ -24,11 +25,12 @@ const CustomInput = <T extends FieldValues>({
     <Input
       label={label}
       labelPlacement="outside"
-      className="mb-6 text-gray-900 w-full"
+      className={`mb-6 text-gray-900 w-full ${customStyle}`}
       isRequired={required}
       type={type === "password" && isVisible ? "text" : type}
       id={label ? `${label.toLowerCase()}` : name}
       placeholder={placeholder}
+      errorMessage
       endContent={
         iconRight ? (
           <button
@@ -44,7 +46,7 @@ const CustomInput = <T extends FieldValues>({
             ) : (
               <AiFillEyeInvisible
                 size={25}
-                classname="text-2xl text-default-400 pointer-events-none"
+                className="text-2xl text-default-400 pointer-events-none"
               />
             )}
           </button>

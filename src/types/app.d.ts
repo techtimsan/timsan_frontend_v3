@@ -6,6 +6,19 @@ export type ProvidersProps = {
   children: ReactNode
 }
 
+export type LocationSearchQuery = {
+  query: string
+}
+
+export type EditMemberProfileProps = {
+  firstName: string
+  lastName: string
+  phoneNumber: string
+  email: string
+  status: "active" | "inactive" // get status...
+  position?: string
+}
+
 export type ExcoCardProps = {
   name: string
   imageUrl: string
@@ -33,5 +46,11 @@ export type CustomInputProps<T> = {
   placeholder?: string
   required?: boolean
   register: UseFormRegister<T>
+  customStyle?: string
   // errors?: FieldErrors | undefined
 } & ComponentProps<"input">
+
+export type CustomTabProps = {
+  title: string
+  tabChildren: JSX.Element[]
+}

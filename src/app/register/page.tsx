@@ -9,6 +9,7 @@ import { Button } from "@nextui-org/button"
 import { Link } from "@nextui-org/link"
 
 export default function Register() {
+  const handleRegister = () => {}
   return (
     <main className="h-screen">
       <Navbar />
@@ -28,12 +29,12 @@ export default function Register() {
         </div>
         <form>
           <FormFields />
-          <Button>Register</Button>
-          <div className="flex items-center space-x-2.5">
-            <p>Do you have an account?</p>
-            <Link href="/login">Sign In</Link>
-          </div>
+          <Button as="button">Register</Button>
         </form>
+        <div className="flex items-center space-x-2.5">
+          <p>Do you have an account?</p>
+          <Link href="/login">Sign In</Link>
+        </div>
       </section>
     </main>
   )
