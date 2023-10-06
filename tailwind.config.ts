@@ -16,6 +16,7 @@ const config: Config = {
       },
       backgroundImage: {
         "tilet-hero": "url('/assets/tilet_heroBG.png')",
+        "institution-hero": "url('/assets/institution_heroIMG.png')"
       },
     },
   },

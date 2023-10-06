@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* remove scrollbar */
+@layer base {
+  main {
+    scrollbar-width: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+[data-collapse="true"] .sidebar__title,
+[data-collapse="true"] .sidebar__name {
+  @apply hidden;
+}
+
+/* collapsible sidebar */
+[data-collapsible="true"] {
+  @apply w-[5rem];
+}
+
 @layer components {
   .custom__section {
     @apply p-5;

@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/ui"
-import timsanLogo from "../../../public/assets/timsan_logo.png"
+import timsanLogo from "../../../../public/assets/timsan_logo.png"
 import Image from "next/image"
 import { CustomInputProps } from "@/types/app"
 import { useForm } from "react-hook-form"
@@ -15,7 +15,7 @@ export default function Register() {
       <Navbar />
       <section className="bg-green h-full p-5 text-center text-white">
         <div>
-          <Image src={timsanLogo} alt="Timsan Logo" />
+          <Image src={timsanLogo} alt="Timsan Logo" className="w-20 h-20" />
           <h3 className="font-semibold text-2xl">Register</h3>
           <p>
             Let&apos;s get you started! Register with a social account to begin.
