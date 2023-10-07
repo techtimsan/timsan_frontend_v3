@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/ui"
-import timsanLogo from "../../../../public/assets/timsan_logo.png"
+import { timsanLogo } from "@/utils/constants"
+
 import { Image } from "@nextui-org/image"
 
 export default function AdminLogin() {

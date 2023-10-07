@@ -2,8 +2,9 @@ import Image from "next/image"
 import Newsletter from "./Newsletter"
 import { Link } from "@nextui-org/link"
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io"
-import timsanLogo from "../../../public/assets/timsan_logo.png"
+
 import { BiLogoGmail } from "react-icons/bi"
+import { timsanLogo } from "@/utils/constants"
 
 const Footer = () => {
   const quickLinks = [

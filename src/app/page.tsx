@@ -1,10 +1,11 @@
 import { Footer, HeroSection, Navbar } from "@/components/ui"
 import { Button } from "@nextui-org/button"
-import news from "../data/news.json"
-import excos from "../data/excos.json"
+
+
 import { ExcoCard, NewsCard } from "@/components/cards"
 import { Link } from "@nextui-org/link"
 import { ChapterMap } from "@/components/utils"
+import { excos, news } from "@/utils/constants"
 
 export default function Home() {
   return (

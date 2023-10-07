@@ -1,9 +1,9 @@
-import { Navbar } from "@/components/ui";
+
 
 export default function AdminDashboard() {
     return (
-        <div>
-            <Navbar />
+        <div className="bg-blue-800 text-white">
+            <h3>Dashboard Content</h3>
         </div>
     )
 }

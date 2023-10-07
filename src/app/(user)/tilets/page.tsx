@@ -2,9 +2,8 @@ import { Footer, Navbar } from "@/components/ui"
 import { Button } from "@nextui-org/button"
 import { Card, CardBody } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
-import courses from "../../data/courses.json"
 import { CourseCard, FeedbackCard } from "@/components/cards"
-import feedbacks from "../../data/feedbacks.json"
+import { courses, feedbacks } from "@/utils/constants"
 
 export default function Tilets() {
   const chaptersData = [

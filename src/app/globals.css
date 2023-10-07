@@ -13,14 +13,13 @@
   }
 }
 
-[data-collapse="true"] .sidebar__title,
-[data-collapse="true"] .sidebar__name {
-  @apply hidden;
+/* collapsible sidebar */
+[data-collapse="true"] {
+  @apply w-[5rem];
 }
 
-/* collapsible sidebar */
-[data-collapsible="true"] {
-  @apply w-[5rem];
+[data-collapse="true"] .sidebar__title {
+  @apply hidden;
 }
 
 @layer components {
@@ -34,5 +33,44 @@
 
   .custom__section > h4 {
     @apply text-green text-center;
+  }
+
+  .admin__layout {
+    @apply flex h-screen relative gap-[2rem];
+  }
+
+  .collapse__button {
+    @apply absolute right-0 top-[6rem] border-none bg-red-800 w-[1.5rem] h-[1.5rem] border border-timsan-gray rounded-[50%] flex justify-center items-center cursor-pointer translate-x-[50%] text-[1.1rem];
+  }
+
+  /* sidebar */
+  .sidebar {
+    @apply h-full w-[12rem] bg-green border-b-8 border-b-red-900 p-[1rem];
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .sidebar__wrapper {
+    @apply relative;
+  }
+
+  .sidebar__link {
+    @apply inline-block text-[1rem] px-[0.8rem] py-[1rem] mb-[1rem] rounded-[0.8rem];
+    text-decoration: none;
+  }
+
+  .sidebar__icon {
+    @apply text-[1.2rem] inline-block
+  }
+
+  .sidebar__items {
+    @apply list-none
+  }
+
+  /* .sidebar__item {
+    @appl
+  } */
+
+  .sidebar__title {
+    @apply ml-[0.5rem] text-white
   }
 }

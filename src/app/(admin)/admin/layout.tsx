@@ -1,3 +1,5 @@
+import { Navbar, Sidebar } from "@/components/ui"
+import { SidebarProvider } from "@/contexts"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
@@ -15,7 +17,16 @@ export default function DashboardLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`relative ${inter.className}`}>{children}</body>
+      <body className={`${inter.className}`}>
+        <SidebarProvider>
+          <Navbar />
+          {/* dashboard wrapper */}
+          <section className="admin__layout">
+            <Sidebar />
+            {children}
+          </section>
+        </SidebarProvider>
+      </body>
     </html>
   )
 }
