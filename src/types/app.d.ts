@@ -19,6 +19,13 @@ export type EditMemberProfileProps = {
   position?: string
 }
 
+export type BookCardProps = {
+  imageUrl: string
+  title: string
+  rating: number
+  author: string
+}
+
 export type ExcoCardProps = {
   name: string
   imageUrl: string
