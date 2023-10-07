@@ -1,0 +1,47 @@
+[
+    {
+        "thumbnailUrl": "/assets/courses/ui_ux_01.png",
+        "title": "Introduction to UI/UX Design 01",
+        "duration": "2hrs 30 minutes",
+        "level": "Beginner",
+        "rating": 5,
+        "author": {
+            "imageUrl": "/assets/excos/seyyid_awwal.png",
+            "name": "Muhammad S."
+        }
+    },
+    {
+      "thumbnailUrl": "/assets/courses/ui_ux_01.png",
+      "title": "Introduction to UI/UX Design 02",
+      "duration": "2hrs 30 minutes",
+      "level": "Beginner",
+      "rating": 5,
+      "author": {
+        "imageUrl": "/assets/excos/seyyid_awwal.png",
+        "name": "Muhammad S."
+      }
+    },
+    {
+        "thumbnailUrl": "/assets/courses/ui_ux_01.png",
+        "title": "Introduction to UI/UX Design 03",
+        "duration": "2hrs 30 minutes",
+        "level": "Beginner",
+        "rating": 5,
+        "author": {
+            "imageUrl": "/assets/excos/seyyid_awwal.png",
+            "name": "Muhammad S."
+        }
+    },
+    {
+        "thumbnailUrl": "/assets/courses/ui_ux_01.png",
+        "title": "Introduction to UI/UX Design 04",
+        "duration": "2hrs 30 minutes",
+        "level": "Beginner",
+        "rating": 5,
+        "author": {
+            "imageUrl": "/assets/excos/seyyid_awwal.png",
+            "name": "Muhammad S."
+        }
+    }
+]
+
