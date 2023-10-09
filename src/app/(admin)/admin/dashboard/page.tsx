@@ -33,7 +33,10 @@ export default function AdminDashboard() {
       <h2>Hi {user.name}!</h2>
 
       {/* small cards */}
-      <div>
+      <div className="mb-10 grid grid-cols-3">
+        {dashboardData.map((data) => (
+          <DashboardCard key={data.title} {...data} />
+        ))}
         {/* <DashboardCard Icon={HiMiniUsers} title="Registered Attendees" total={550} /> */}
       </div>
 

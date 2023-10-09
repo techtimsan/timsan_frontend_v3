@@ -23,7 +23,7 @@ export default function DashboardLayout({
           {/* dashboard wrapper */}
           <section className="admin__layout">
             <Sidebar />
-            <section className="w-full min-h-screen p-5">{children}</section>
+            <section className="min-h-screen p-5 w-full">{children}</section>
           </section>
         </SidebarProvider>
       </body>

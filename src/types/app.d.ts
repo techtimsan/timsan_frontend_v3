@@ -50,6 +50,7 @@ export type StatusCardProps = {
   approved: number
   pending: number
   active: number
+  url: string
 }
 
 export type BookCardProps = {

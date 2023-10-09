@@ -3,6 +3,7 @@
 import { Button } from "@nextui-org/button"
 import { AiOutlineClose } from "react-icons/ai"
 import { Link } from "@nextui-org/link"
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
 import {
   BiSolidGridAlt,
   BiLoaderCircle,
@@ -69,14 +70,18 @@ const Sidebar = () => {
         className="collapse__button"
         onClick={toggleSidebarCollapseHandler}
       >
-        <AiOutlineClose className="text-2xl text-timsan-gray" />
+        {isSidebarCollapsed ? (
+          <BiChevronRight className="text-2xl text-green" />
+        ) : (
+          <BiChevronLeft className="text-2xl text-green" />
+        )}
       </button>
       {/* sidebar content */}
       <aside className="sidebar" data-collapse={isSidebarCollapsed}>
         {/* sidebar items -- change ul ? */}
         <ul className="sidebar__items">
           {sidebarItems.map(({ Icon, title, url }) => (
-            <li key={title} className="sidebar__item">
+            <li key={title} className="sidebar__item group">
               <Link
                 href={url ? url : "/admin/dashboard"}
                 className="sidebar__link"
