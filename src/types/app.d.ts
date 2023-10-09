@@ -19,6 +19,39 @@ export type EditMemberProfileProps = {
   position?: string
 }
 
+export type ConferenceCardProps = {
+  thumbnailUrl: string
+  title: string
+  content: string
+  date: string // Date
+  location: string
+}
+
+export type CourseCardProps = {
+  thumbnailUrl: string
+  title: string
+  duration: string
+  level: string // "Beginner" | "Intermediate" | "Advanced"
+  rating: number
+  author: {
+    imageUrl: string
+    name: string
+  }
+}
+
+export type DashboardCardProps = {
+  Icon: IconType
+  total: number
+  title: string
+}
+
+export type StatusCardProps = {
+  title: string
+  approved: number
+  pending: number
+  active: number
+}
+
 export type BookCardProps = {
   imageUrl: string
   title: string

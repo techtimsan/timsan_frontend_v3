@@ -3,11 +3,10 @@ import { Image } from "@nextui-org/image"
 import { Avatar } from "@nextui-org/avatar"
 import { AiOutlineFieldTime, AiOutlineStar, AiFillStar } from "react-icons/ai"
 import { BsBarChart } from "react-icons/bs"
+import { Button } from '@nextui-org/button'
 import { CourseCardProps } from "@/types/app"
 
-
-
-const CourseCard = ({
+const ManageCourseCard = ({
   thumbnailUrl,
   title,
   duration,
@@ -42,12 +41,12 @@ const CourseCard = ({
           ))}
         </div>
       </CardBody>
-      <CardFooter className="border-t border-t-timsan-gray px-3.5 space-x-3.5">
-        <Avatar isBordered src={imageUrl} alt="Author Image" />
-        <h5>{name}</h5>
+      <CardFooter className="border-t border-t-timsan-gray px-3.5 flex items-center justify-between">
+              <Button className="bg-green">Edit</Button>
+              <Button className="bg-red-600">Delete</Button>
       </CardFooter>
     </Card>
   )
 }
 
-export default CourseCard
+export default ManageCourseCard
