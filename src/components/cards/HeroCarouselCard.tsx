@@ -1,10 +1,18 @@
 import { HeroCarouselCardProps } from "@/types/app"
 import { Card, CardBody } from "@nextui-org/card"
+import { Image } from "@nextui-org/image"
 
-const HeroCarouselCard = ({}: HeroCarouselCardProps) => {
+const HeroCarouselCard = ({ thumbnailUrl, title }: HeroCarouselCardProps) => {
   return (
-    <Card>
-      <CardBody></CardBody>
+    <Card className="w-[40vw]">
+      <CardBody className="relative p-0 bg-green">
+        <Image src={thumbnailUrl} alt={title} className="w-full object-cover" />
+        <div className="absolute inset-x-0 inset-y-0 z-10 flex items-center justify-center">
+          <div className="bg-timsan-gray bg-opacity-60 text-white w-full">
+            <h5 className="py-5 px-10 font-medium text-2xl">{title}</h5>
+          </div>
+        </div>
+      </CardBody>
     </Card>
   )
 }

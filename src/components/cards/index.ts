@@ -6,4 +6,5 @@ export { default as BookCard } from "./BookCard"
 export { default as DashboardApprovalStatusCard } from "./DashboardApprovalStatusCard"
 export { default as ManageCourseCard } from "./ManageCourseCard"
 export { default as DashboardCard } from "./DashboardCard"
-export { default as TiletCard } from './TiletCard'
+export { default as TiletCard } from "./TiletCard"
+export { default as HeroCarouselCard } from "./HeroCarouselCard"

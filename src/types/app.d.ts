@@ -72,6 +72,12 @@ export type HeroCarouselCardProps = {
   title: string
 }
 
+export type AnnualDueFormProps = {
+  chapterName: string
+  email: string
+  amount: string // number ?
+}
+
 export type BookCardProps = {
   imageUrl: string
   title: string

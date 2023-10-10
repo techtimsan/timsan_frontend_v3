@@ -2,7 +2,7 @@ import { Footer, HeroSection, Navbar } from "@/components/ui"
 import { Button } from "@nextui-org/button"
 
 
-import { ExcoCard, NewsCard } from "@/components/cards"
+import { ExcoCard, HeroCarouselCard, NewsCard } from "@/components/cards"
 import { Link } from "@nextui-org/link"
 import { ChapterMap } from "@/components/utils"
 import { excos, news } from "@/utils/constants"
@@ -12,6 +12,11 @@ export default function Home() {
     <main>
       <Navbar />
       <HeroSection />
+
+      {/* carousel slider */}
+      <section className="custom__section">
+        <HeroCarouselCard title="TIMSAN SOUTHWEST Camping Exercise at Kebbi State" thumbnailUrl="/assets/news/news_thumbnail01.png" />
+      </section>
       {/* news */}
       <section className="custom__section">
         <h3 className="">TIMSAN BROADCAST</h3>
