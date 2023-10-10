@@ -17,8 +17,8 @@ const NewsletterForm = () => {
     register,
   }
   return (
-    <form action="">
-      <CustomInput className="w-full bg-green text-red-800" {...field} />
+    <form action="" className="w-full">
+      <CustomInput customStyle="w-full bg-transparent my-0" {...field} />
     </form>
   )
 }

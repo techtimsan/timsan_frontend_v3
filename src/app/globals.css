@@ -24,11 +24,11 @@
 
 @layer components {
   .custom__section {
-    @apply p-5;
+    @apply p-5 sm:px-20;
   }
 
   .custom__section > h3 {
-    @apply text-center;
+    @apply text-center font-semibold text-2xl text-green;
   }
 
   .custom__section > h4 {

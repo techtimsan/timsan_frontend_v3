@@ -53,6 +53,25 @@ export type StatusCardProps = {
   url: string
 }
 
+export type TiletCardProps = {
+  thumbnailUrl: string
+  title: string
+  text: string
+  url: string
+}
+
+export type DonationProps = {
+  name: string
+  email: string
+  amount: number // string
+  paymentOption?: string
+}
+
+export type HeroCarouselCardProps = {
+  thumbnailUrl: string
+  title: string
+}
+
 export type BookCardProps = {
   imageUrl: string
   title: string
