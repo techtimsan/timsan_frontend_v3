@@ -24,7 +24,25 @@ import { useState } from "react"
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
-  const menuItems = ["Tilets", "E-Library", "Our Chapters", "Membership"]
+  
+  const menuItems = [
+    {
+      title: "Tilets",
+      url: "/tilets"
+    },
+    {
+      title: "E-Library",
+      url: "e-library",
+    },
+    {
+      title: "Our Chapters",
+      url: "/chapters"
+    },
+    {
+      title: "Membership",
+      url: "/membership"
+    }
+  ]
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -37,12 +55,14 @@ export default function App() {
         <NavbarBrand className="space-x-3.5">
           {/* <Button as={Link} variant="flat" className="bg-none"> */}
 
-          <Image
-            src="/assets/timsan_logo.png"
-            alt="Timsan Logo"
-            width={35}
-            height={35}
-          />
+          <Link href="/">
+            <Image
+              src="/assets/timsan_logo.png"
+              alt="Timsan Logo"
+              width={35}
+              height={35}
+            />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -75,8 +95,13 @@ export default function App() {
       {/* menu */}
       <NavbarMenu className="h-[200px]">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="uppercase w-full items-center justify-center">{item}</Link>
+          <NavbarMenuItem key={`${item.title}-${index}`}>
+            <Link
+              href={item.url}
+              className="uppercase w-full items-center justify-center"
+            >
+              {item.title}
+            </Link>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

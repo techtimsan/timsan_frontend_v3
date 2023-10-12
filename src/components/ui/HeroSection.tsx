@@ -23,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <section className="custom__section">
-      <h2 className="text-center font-semibold text-2xl">
+      <h2 className="text-center font-semibold text-2xl mb-10">
         Tijaniyyah <span className="text-green">Muslim</span> Students&apos;{" "}
         <span className="text-green">Association</span> of Nigeria
       </h2>

@@ -8,3 +8,4 @@ export { default as ManageCourseCard } from "./ManageCourseCard"
 export { default as DashboardCard } from "./DashboardCard"
 export { default as TiletCard } from "./TiletCard"
 export { default as HeroCarouselCard } from "./HeroCarouselCard"
+export { default as HeroCarouselSlider } from './HeroCarouselSlider'
