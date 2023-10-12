@@ -10,7 +10,7 @@ const ChapterMap = () => {
   const libraries = useMemo(() => ["places"], [])
 
   const mapContainerStyle = {
-    height: "400px",
+    height: "500px",
     width: "100%",
   }
 

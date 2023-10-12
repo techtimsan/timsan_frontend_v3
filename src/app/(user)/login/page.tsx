@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/ui"
-import timsanLogo from "../../../public/assets/timsan_logo.png"
+
 import Image from "next/image"
 import { CustomInputProps } from "@/types/app"
 import { useForm } from "react-hook-form"
@@ -7,6 +7,7 @@ import { CustomInput } from "@/components/custom"
 import { Button } from "@nextui-org/button"
 import { Link } from "@nextui-org/link"
 import FormFields from "./FormFields"
+import { timsanLogo } from "@/utils/constants"
 
 export default function Login() {
   return (
@@ -14,7 +15,9 @@ export default function Login() {
       <Navbar />
       <section className="bg-green h-full p-5 text-center text-white">
         <div>
-          <Image src={timsanLogo} alt="Timsan Logo" />
+          <div className="flex items-center justify-center">
+            <Image src={timsanLogo} alt="Timsan Logo" className="w-20 h-20" />
+          </div>
           <h3 className="font-semibold text-2xl">Login</h3>
           <p>Welcome back! Sign in with a social account to contiune.</p>
 

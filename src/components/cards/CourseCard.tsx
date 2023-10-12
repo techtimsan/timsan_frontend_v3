@@ -3,18 +3,9 @@ import { Image } from "@nextui-org/image"
 import { Avatar } from "@nextui-org/avatar"
 import { AiOutlineFieldTime, AiOutlineStar, AiFillStar } from "react-icons/ai"
 import { BsBarChart } from "react-icons/bs"
+import { CourseCardProps } from "@/types/app"
 
-type CourseCardProps = {
-  thumbnailUrl: string
-  title: string
-  duration: string
-  level: string // "Beginner" | "Intermediate" | "Advanced"
-  rating: number
-  author: {
-    imageUrl: string
-    name: string
-  }
-}
+
 
 const CourseCard = ({
   thumbnailUrl,

@@ -1,4 +1,11 @@
 export { default as NewsCard } from "./NewsCard"
 export { default as ExcoCard } from "./ExcoCard"
-export { default as CourseCard } from './CourseCard'
-export { default as FeedbackCard } from './FeedbackCard'
+export { default as CourseCard } from "./CourseCard"
+export { default as FeedbackCard } from "./FeedbackCard"
+export { default as BookCard } from "./BookCard"
+export { default as DashboardApprovalStatusCard } from "./DashboardApprovalStatusCard"
+export { default as ManageCourseCard } from "./ManageCourseCard"
+export { default as DashboardCard } from "./DashboardCard"
+export { default as TiletCard } from "./TiletCard"
+export { default as HeroCarouselCard } from "./HeroCarouselCard"
+export { default as HeroCarouselSlider } from './HeroCarouselSlider'

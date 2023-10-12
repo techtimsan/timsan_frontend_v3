@@ -23,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <section className="custom__section">
-      <h2 className="text-center font-semibold text-2xl">
+      <h2 className="text-center font-semibold text-2xl mb-10">
         Tijaniyyah <span className="text-green">Muslim</span> Students&apos;{" "}
         <span className="text-green">Association</span> of Nigeria
       </h2>
@@ -41,7 +41,7 @@ const HeroSection = () => {
       </div>
 
       {/* hero cards */}
-      <div className="grid grid-cols-2 gap-4 mt-8">
+      <div className="grid grid-cols-2 gap-4 mt-8 sm:grid-cols-4 sm:gap-x-10">
         {chaptersData.map(({ text, count }) => (
           <Card key={text} shadow="sm" isPressable className="p-5">
             <CardBody className="overflow-visible py-3.5 px-0">
