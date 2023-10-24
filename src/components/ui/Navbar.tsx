@@ -45,7 +45,7 @@ export default function App() {
   ]
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
       <NavbarContent justify="start">
         <NavbarMenuToggle
           className="sm:hidden"
