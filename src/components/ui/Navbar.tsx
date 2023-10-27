@@ -19,16 +19,16 @@ import { Link } from "@nextui-org/link"
 import { Button } from "@nextui-org/button"
 import Image from "next/image"
 import { HiOutlineMenuAlt1 } from "react-icons/hi"
+import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { useState } from "react"
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
-  
   const menuItems = [
     {
       title: "Tilets",
-      url: "/tilets"
+      url: "/tilets",
     },
     {
       title: "E-Library",
@@ -36,12 +36,12 @@ export default function App() {
     },
     {
       title: "Our Chapters",
-      url: "/chapters"
+      url: "/chapters",
     },
     {
       title: "Membership",
-      url: "/membership"
-    }
+      url: "/membership",
+    },
   ]
 
   return (
@@ -66,12 +66,81 @@ export default function App() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {/* <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+        <NavbarItem>
+          <Link color="foreground" href="/tilets">
+            TILETS
           </Link>
-        </NavbarItem> */}
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/e-library">
+            E-LIBRARY
+          </Link>
+        </NavbarItem>
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Link className="cursor-pointer" color="foreground">
+                OUR CHAPTERS <BiChevronDown />
+              </Link>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="Our Chapters"
+            className="w-full"
+            // itemClasses={{
+            //   base: "gap-4",
+            // }}
+          >
+            <DropdownItem>
+              <Link href="/institution/oau" color="foreground" className="w-full">
+                Institution
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link href="/chapter/state" color="foreground" className="w-full">
+                State
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link href="/chapter/zonal" color="foreground" className="w-full">
+                Zonal
+              </Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Link className="cursor-pointer" color="foreground">
+                MEMBERSHIP <BiChevronDown />
+              </Link>
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu
+            aria-label="Membership"
+            className="w-full"
+            // itemClasses={{
+            //   base: "gap-4",
+            // }}
+          >
+            <DropdownItem>
+              <Link href="/login" color="foreground" className="w-full">
+                Log In
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link href="/register" color="foreground" className="w-full">
+                Register
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link href="/annual-due" color="foreground" className="w-full">
+                Annual Due
+              </Link>
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="">

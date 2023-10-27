@@ -45,9 +45,23 @@ const Footer = () => {
             // height={120}
           />
           <div className="flex items-center space-x-5 my-2.5">
-            <IoLogoFacebook className="text-3xl" />
-            <IoLogoLinkedin className="text-3xl" />
-            <IoLogoInstagram className="text-3xl" />
+            <Link
+              href="https://www.facebook.com"
+              isExternal
+              color="foreground"
+            >
+              <IoLogoFacebook className="text-3xl text-white" />
+            </Link>
+            <Link href="https://www.linkedin.com" isExternal color="foreground">
+              <IoLogoLinkedin className="text-3xl text-white" />
+            </Link>
+            <Link
+              href="https://www.instagram.com"
+              isExternal
+              color="foreground"
+            >
+              <IoLogoInstagram className="text-3xl text-white" />
+            </Link>
           </div>
           <div className="flex flex-col">
             <div className="flex space-x-2.5 items-center">

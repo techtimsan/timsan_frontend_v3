@@ -29,10 +29,10 @@ export default function Donate() {
       </section>
 
       {/* card ? */}
-      <section id="donate" className="custom__section sm:mx-28">
+      <section id="donate" className="custom__section">
         <Card>
           <CardBody className="px-5 sm:px-10">
-            <div className="flex sm:mx-28 text-center space-y-5 items-center justify-center flex-col">
+            <div className="flex text-center space-y-5 items-center justify-center flex-col">
               <h3 className="uppercase text-4xl text-green font-medium">
                 We are glad to get your donation
               </h3>

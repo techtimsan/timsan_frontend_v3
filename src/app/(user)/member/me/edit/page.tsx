@@ -16,9 +16,7 @@ export default function EditMemberProfile() {
 
       {/* edit profile */}
       <section className="custom__section">
-        <form action="" className="border px-5 py-7">
           <FormFields />
-        </form>
       </section>
       <Footer />
     </main>

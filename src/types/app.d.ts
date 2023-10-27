@@ -97,6 +97,7 @@ export type LoginProps = {
 }
 
 export type RegisterProps = {
+  userType: string // "Member" | "Institution" | "State" | "Zonal"
   fullname: string
   email: string
   password: string

@@ -3,7 +3,7 @@
 import { CustomInput } from "@/components/custom"
 import { CustomInputProps, LocationSearchQuery } from "@/types/app"
 import { useState } from "react"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 
 const ChapterSearch = () => {
   const [searchQuery, setSearchQuery] = useState<string>("")
@@ -19,15 +19,18 @@ const ChapterSearch = () => {
     label: "Input A Chapter Name",
     register,
   }
+
+  // handle search on Enter key press
+
+  const handleChapterSearch: SubmitHandler<LocationSearchQuery> = (data, e) => {
+    e!.preventDefault()
+
+    console.log(data)
+  }
   return (
     <div className="mx-3.5">
-      {/* <CustomInput customStyle="bg-green" {...chapterSearchQuery} /> */}
-      <input
-        type="search"
-        name=""
-        id=""
-        value={searchQuery}
-        placeholder="Input A Chapter Name..."
+      <CustomInput
+        {...chapterSearchQuery}
         className="bg-green font-medium px-2.5 text-lg py-1.5 placeholder:text-white text-white rounded-md"
       />
     </div>

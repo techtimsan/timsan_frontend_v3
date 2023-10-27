@@ -19,9 +19,10 @@ export default function Home() {
       <HeroSection />
 
       {/* carousel slider */}
-      <section className="">
+      <div className="">
         <HeroCarouselSlider />
-      </section>
+      </div>
+
       {/* news */}
       <section className="custom__section">
         <h3 className="">TIMSAN BROADCAST</h3>

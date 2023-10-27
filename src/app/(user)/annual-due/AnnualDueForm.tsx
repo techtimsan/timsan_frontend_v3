@@ -1,7 +1,7 @@
 "use client"
 
 import type { AnnualDueFormProps, CustomInputProps } from "@/types/app"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 import { Button } from "@nextui-org/button"
 import { CustomInput } from "@/components/custom"
 
@@ -12,7 +12,7 @@ const AnnualDueForm = () => {
     amount: "",
   }
 
-  const { register } = useForm<AnnualDueFormProps>({
+  const { register, handleSubmit } = useForm<AnnualDueFormProps>({
     defaultValues,
   })
 
@@ -39,14 +39,25 @@ const AnnualDueForm = () => {
       label: "Amount",
     },
   ]
+
+  const handleAnnualDue: SubmitHandler<AnnualDueFormProps> = (data, e) => {
+    e!.preventDefault()
+
+    console.log(data)
+  }
   return (
-    <form action="" className="mt-10">
+    <form onSubmit={handleSubmit(handleAnnualDue)} className="mt-10">
       <div>
         {formFields.map((field) => (
           <CustomInput key={field.name} {...field} />
         ))}
       </div>
-      <Button className="bg-green text-white font-medium px-5 rounded-md py-1.5">Pay Due</Button>
+      <Button
+        type="submit"
+        className="bg-green text-white font-medium px-5 rounded-md py-1.5"
+      >
+        Pay Due
+      </Button>
     </form>
   )
 }

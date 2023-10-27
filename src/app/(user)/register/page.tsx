@@ -1,16 +1,10 @@
 import { Navbar } from "@/components/ui"
-
 import Image from "next/image"
-import { CustomInputProps } from "@/types/app"
-import { useForm } from "react-hook-form"
-import { CustomInput } from "@/components/custom"
 import FormFields from "./FormFields"
-import { Button } from "@nextui-org/button"
 import { Link } from "@nextui-org/link"
 import { timsanLogo } from "@/utils/constants"
 
 export default function Register() {
-  const handleRegister = () => {}
   return (
     <main className="h-screen">
       <Navbar />
@@ -30,10 +24,7 @@ export default function Register() {
         <div>
           <span>Or</span>
         </div>
-        <form>
-          <FormFields />
-          <Button as="button">Register</Button>
-        </form>
+        <FormFields />
         <div className="flex items-center space-x-2.5">
           <p>Do you have an account?</p>
           <Link href="/login">Sign In</Link>
