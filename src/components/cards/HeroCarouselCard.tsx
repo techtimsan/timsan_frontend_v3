@@ -5,7 +5,7 @@ import { SwiperSlide } from "swiper/react"
 
 const HeroCarouselCard = ({ thumbnailUrl, title }: HeroCarouselCardProps) => {
   return (
-    <Card className="w-fit">
+    <Card className="">
       <CardBody className="relative p-0">
         <Image src={thumbnailUrl} alt={title} className="w-full object-cover" />
         <div className="absolute inset-x-0 inset-y-0 z-10 flex items-center justify-center">

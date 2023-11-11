@@ -2,14 +2,15 @@
 
 import { CustomInput } from "@/components/custom"
 import { CustomInputProps, LoginProps } from "@/types/app"
-import { useForm } from "react-hook-form"
+import { Button } from "@nextui-org/button"
+import { SubmitHandler, useForm } from "react-hook-form"
 
 const FormFields = () => {
   const defaultValues: LoginProps = {
     email: "",
     password: "",
   }
-  const { register } = useForm<LoginProps>({
+  const { register, handleSubmit } = useForm<LoginProps>({
     defaultValues,
   })
   const formFields: CustomInputProps<LoginProps>[] = [
@@ -28,12 +29,19 @@ const FormFields = () => {
       register,
     },
   ]
+
+  const handleLogin: SubmitHandler<LoginProps> = (data, e) => {
+    e!.preventDefault()
+
+    console.log(data)
+  }
   return (
-    <div>
+    <form onSubmit={handleSubmit(handleLogin)}>
       {formFields.map((field) => (
         <CustomInput key={field.name} {...field} />
       ))}
-    </div>
+      <Button type="submit">Login</Button>
+    </form>
   )
 }
 

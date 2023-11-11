@@ -2,17 +2,43 @@
 
 import { CustomInput } from "@/components/custom"
 import { CustomInputProps, RegisterProps } from "@/types/app"
-import { useForm } from "react-hook-form"
+import { Button } from "@nextui-org/button"
+import { useForm, SubmitHandler, Controller } from "react-hook-form"
+import { Select, SelectItem } from "@nextui-org/select"
+import toast from "react-hot-toast"
 
 const FormFields = () => {
   const defaultValues: RegisterProps = {
+    userType: "",
     fullname: "",
     email: "",
     password: "",
   }
+
+  const userTypes = [
+    {
+      value: "Member",
+      label: "Member",
+    },
+    {
+      value: "Institution",
+      label: "Institution",
+    },
+    {
+      value: "State",
+      label: "State",
+    },
+    {
+      value: "Zonal",
+      label: "Zonal",
+    },
+  ]
+
   const {
+    control,
     register,
     formState: { errors },
+    handleSubmit,
   } = useForm<RegisterProps>({
     defaultValues,
   })
@@ -43,12 +69,39 @@ const FormFields = () => {
     //     name:
     // }
   ]
+
+  const handleRegister: SubmitHandler<RegisterProps> = (data, e) => {
+    e!.preventDefault()
+
+    toast.success("Registered Successfully!")
+  }
   return (
-    <div>
+    <form onSubmit={handleSubmit(handleRegister)}>
+      <Controller
+        name="userType"
+        control={control}
+        render={({ field }) => (
+          <Select
+            className="mb-7 text-black"
+            label="You're registering as"
+            size="sm"
+            variant="flat"
+            {...field}
+          >
+            {userTypes.map((userType) => (
+              <SelectItem key={userType.value} value={userType.value}>
+                {userType.label}
+              </SelectItem>
+            ))}
+          </Select>
+        )}
+      />
+
       {formFields.map((field) => (
         <CustomInput key={field.name} {...field} />
       ))}
-    </div>
+      <Button type="submit">Register</Button>
+    </form>
   )
 }
 

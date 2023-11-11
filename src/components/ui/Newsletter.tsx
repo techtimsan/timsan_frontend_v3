@@ -1,7 +1,3 @@
-import { Button } from "@nextui-org/button"
-import { CustomInput } from "../custom"
-import { CustomInputProps } from "@/types/app"
-import { useForm } from "react-hook-form"
 import NewsletterForm from "./NewsletterForm"
 
 const Newsletter = () => {
@@ -19,9 +15,7 @@ const Newsletter = () => {
 
       <div className="flex sm:h-fit sm:w-1/2 flex-col items-start bg-white sm:flex-row sm:justify-center rounded-md px-1.5 sm:px-3.5 sm:py-1.5">
         <NewsletterForm />
-        <Button className="bg-green text-white font-medium px-8 my-0">
-          Subscribe
-        </Button>
+        
       </div>
     </div>
   )

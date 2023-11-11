@@ -27,12 +27,15 @@ const HeroCarouselSlider = () => {
     //     </SwiperSlide>
     //   ))}
     // </Swiper>
-    <Swiper className="flex">
-      {carouselData.map((data) => (
-        <SwiperSlide key={data.title} className="">
-          <HeroCarouselCard {...data} />
-        </SwiperSlide>
-      ))}
+    <Swiper slidesPerView={1} spaceBetween={60}>
+      <SwiperSlide className="">
+        {/* <HeroCarouselCard {...carouselData[0]} /> */}
+        one
+      </SwiperSlide>
+      <SwiperSlide>
+        {/* <HeroCarouselCard {...carouselData[1]} /> */}
+        two
+      </SwiperSlide>
     </Swiper>
   )
 }

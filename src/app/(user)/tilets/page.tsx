@@ -97,7 +97,7 @@ export default function Tilets() {
         </div>
 
         {/* course cards */}
-        <div className="my-5 sm:grid sm:grid-cols-4 sm:gap-x-10">
+        <div className="my-5 grid grid-cols-2 gap-x-3.5 sm:grid-cols-4 sm:gap-x-10">
           {courses.map((course) => (
             <CourseCard key={course.title} {...course} />
           ))}
@@ -116,8 +116,8 @@ export default function Tilets() {
               className="w-full object-cover object-center h-[500px]"
             />
           </div>
-          <div>
-            <h3 className="text-5xl sm:mb-5 text-green font-semibold">
+          <div className="mt-10">
+            <h3 className="text-3xl sm:text-5xl mb-5 text-green font-semibold">
               Benefit from our online TILETS platform
             </h3>
             <p className="sm:mb-10">
@@ -160,7 +160,7 @@ export default function Tilets() {
         <h3>Recommended Courses</h3>
         {/* course cards */}
         {/* showing just 2 */}
-        <div className="my-5 sm:grid sm:grid-cols-4 sm:gap-x-10">
+        <div className="my-5 grid grid-cols-2 sm:grid-cols-4 gap-x-3.5 sm:gap-x-10">
           {courses.splice(0, 2).map((course) => (
             <CourseCard key={course.title} {...course} />
           ))}
@@ -168,11 +168,13 @@ export default function Tilets() {
       </section>
 
       {/* tilets sessions */}
-      <section className="custom__section">
+      <section className="custom__section bg-tilets-session bg-cover bg-center">
         <h3 className="sm:mb-10">TILETS Sessions</h3>
-        <div>{tilets.map((tilet) => (
-          <TiletCard key={tilet.title} {...tilet} />
-        ))}</div>
+        <div className="">
+          {tilets.map((tilet) => (
+            <TiletCard key={tilet.title} {...tilet} />
+          ))}
+        </div>
       </section>
 
       {/* feedback carousel */}
