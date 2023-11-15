@@ -2,7 +2,8 @@
 
 import { CustomInput } from "@/components/custom"
 import { CustomInputProps, EditMemberProfileProps } from "@/types/app"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { Button } from "@nextui-org/button"
 
 const FormFields = () => {
   const defaultValues: EditMemberProfileProps = {
@@ -11,9 +12,9 @@ const FormFields = () => {
     lastName: "",
     phoneNumber: "",
     status: "active",
-    position: ""
+    position: "",
   }
-  const { register } = useForm<EditMemberProfileProps>({
+  const { register, handleSubmit } = useForm<EditMemberProfileProps>({
     defaultValues,
   })
   const formFields: CustomInputProps<EditMemberProfileProps>[] = [
@@ -59,12 +60,26 @@ const FormFields = () => {
       register,
     },
   ]
+
+  const handleEditMember: SubmitHandler<EditMemberProfileProps> = (data, e) => {
+    e!.preventDefault()
+
+    console.log(data)
+  }
+
   return (
-    <div>
+    <form
+      onSubmit={handleSubmit(handleEditMember)}
+      className="border px-5 py-7"
+    >
       {formFields.map((field) => (
         <CustomInput key={field.name} {...field} />
       ))}
-    </div>
+      <Button type="submit">Save</Button>
+
+      {/* go back in history */}
+      <Button>Back</Button>
+    </form>
   )
 }
 

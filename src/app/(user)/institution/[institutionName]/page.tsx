@@ -1,22 +1,23 @@
 import { ExcoCard } from "@/components/cards"
-import excos from "../../../data/excos.json"
+
 import { Button } from "@nextui-org/button"
 import { Link } from "@nextui-org/link"
 import Image from "next/image"
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io"
-import { Footer } from "@/components/ui"
-import timsanLogo from "../../../../public/assets/timsan_logo.png"
+import { Footer, Navbar } from "@/components/ui"
+import { excos, timsanLogo } from "@/utils/constants"
+
 
 const InstitutionPage = ({ params }: { params: { slug: string } }) => {
   console.log(params)
   return (
     <main>
-      <section className="custom__section relative bg-timsan-gray/20 py-10">
-        <div className="absolute">
-          <Image src={timsanLogo} alt="Timsan Logo" className="w-32 h-32" />
-        </div>
+      <Navbar />
+      <section className="custom__section relative bg-timsan-gray z-10 py-20">
+        <div className="absolute bg-institution-hero bg-contain bg-no-repeat bg-opacity-50 bg-center inset-x-0 inset-y-0" />
+          
         {/* chapter Name */}
-        <h2 className="">University of Ilorin Chapter.</h2>
+        <h2 className="text-white font-semibold text-3xl">University of Ilorin Chapter.</h2>
         <div className="flex items-center">
           <IoLogoFacebook size={20} />
           <IoLogoLinkedin size={20} />

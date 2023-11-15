@@ -19,6 +19,72 @@ export type EditMemberProfileProps = {
   position?: string
 }
 
+export type ConferenceCardProps = {
+  thumbnailUrl: string
+  title: string
+  content: string
+  date: string // Date
+  location: string
+}
+
+export type CourseCardProps = {
+  thumbnailUrl: string
+  title: string
+  duration: string
+  level: string // "Beginner" | "Intermediate" | "Advanced"
+  rating: number
+  author: {
+    imageUrl: string
+    name: string
+  }
+}
+
+export type DashboardCardProps = {
+  Icon: IconType
+  total: number
+  title: string
+}
+
+export type StatusCardProps = {
+  title: string
+  approved: number
+  pending: number
+  active: number
+  url: string
+}
+
+export type TiletCardProps = {
+  thumbnailUrl: string
+  title: string
+  text: string
+  url: string
+}
+
+export type DonationProps = {
+  name: string
+  email: string
+  amount: number // string
+  paymentOption?: string
+}
+
+export type HeroCarouselCardProps = {
+  thumbnailUrl: string
+  title: string
+}
+
+export type AnnualDueFormProps = {
+  chapterName: string
+  email: string
+  amount: string // number ?
+}
+
+export type BookCardProps = {
+  imageUrl: string
+  title: string
+  rating: number
+  author: string
+}
+
 export type ExcoCardProps = {
   name: string
   imageUrl: string
@@ -31,6 +97,7 @@ export type LoginProps = {
 }
 
 export type RegisterProps = {
+  userType: string // "Member" | "Institution" | "State" | "Zonal"
   fullname: string
   email: string
   password: string

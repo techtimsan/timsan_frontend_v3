@@ -39,7 +39,7 @@ const ChapterMap = () => {
   if (!isLoaded) {
     return (
       <div className="w-screen flex items-center justify-center h-[400px]">
-        <CircularProgress label="Loading Google Map..." color="secondary" />
+        <CircularProgress label="Loading Google Map..." color="success" />
       </div>
     )
   }

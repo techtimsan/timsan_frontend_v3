@@ -1,29 +1,14 @@
+import { chaptersData } from "@/data/api"
 import { Button } from "@nextui-org/button"
 import { Card, CardBody } from "@nextui-org/card"
+import { Link } from '@nextui-org/link'
 
 const HeroSection = () => {
-  const chaptersData = [
-    {
-      text: "Zonal Chapter",
-      count: 15,
-    },
-    {
-      text: "State Chapter",
-      count: 12,
-    },
-    {
-      text: "Local Chapters",
-      count: 30,
-    },
-    {
-      text: "Members",
-      count: 120,
-    },
-  ]
+  
 
   return (
     <section className="custom__section">
-      <h2 className="text-center font-semibold text-2xl">
+      <h2 className="text-center font-semibold text-2xl mb-10">
         Tijaniyyah <span className="text-green">Muslim</span> Students&apos;{" "}
         <span className="text-green">Association</span> of Nigeria
       </h2>
@@ -36,16 +21,22 @@ const HeroSection = () => {
         repellat voluptas nulla, quibusdam fuga ratione?
       </p>
       <div className="flex items-center space-x-3.5 w-full justify-center mt-5">
-        <Button>About Us</Button>
-        <Button className="bg-green text-white">Donate Now</Button>
+        <Button as={Link} href="/about">
+          About Us
+        </Button>
+        <Button as={Link} href="/donate" className="bg-green text-white">
+          Donate Now
+        </Button>
       </div>
 
       {/* hero cards */}
-      <div className="grid grid-cols-2 gap-4 mt-8">
+      <div className="grid grid-cols-2 gap-4 mt-8 sm:grid-cols-4 sm:gap-x-10">
         {chaptersData.map(({ text, count }) => (
           <Card key={text} shadow="sm" isPressable className="p-5">
             <CardBody className="overflow-visible py-3.5 px-0">
-              <h3 className="text-green font-bold text-6xl">{count}</h3>
+              <h3 className="text-green font-bold text-5xl sm:text-6xl">
+                {count}
+              </h3>
               <p className="font-semibold text-sm">{text}</p>
             </CardBody>
           </Card>

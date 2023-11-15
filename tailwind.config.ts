@@ -16,7 +16,9 @@ const config: Config = {
       },
       backgroundImage: {
         "tilet-hero": "url('/assets/tilet_heroBG.png')",
-        "institution-hero": "url('/assets/institution_heroIMG.png')"
+        "institution-hero": "url('/assets/institution_heroIMG.png')",
+        "about-hero": "url('/assets/about_BG.png')",
+        "tilets-session": "url('/assets/tilets_session_BG.png')",
       },
     },
   },
