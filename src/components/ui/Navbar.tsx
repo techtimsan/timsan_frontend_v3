@@ -42,6 +42,10 @@ export default function App() {
       title: "Membership",
       url: "/membership",
     },
+    {
+      title: "Conference",
+      url: "/conference",
+    },
   ]
 
   return (
@@ -141,6 +145,11 @@ export default function App() {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <NavbarItem>
+          <Link color="foreground" href="/conference">
+            CONFERENCE
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="">

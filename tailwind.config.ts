@@ -14,11 +14,15 @@ const config: Config = {
         green: "#38A926",
         "timsan-gray": "#1A1A1A",
       },
+      fontFamily: {
+        "lato": ["Lato", "sans-serif"]
+      },
       backgroundImage: {
         "tilet-hero": "url('/assets/tilet_heroBG.png')",
         "institution-hero": "url('/assets/institution_heroIMG.png')",
         "about-hero": "url('/assets/about_BG.png')",
         "tilets-session": "url('/assets/tilets_session_BG.png')",
+        "page-bg": "url('/assets/news/news_thumbnail01.png')"
       },
     },
   },

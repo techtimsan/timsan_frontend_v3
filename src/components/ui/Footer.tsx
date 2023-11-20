@@ -88,7 +88,7 @@ const Footer = () => {
       </section>
       <hr className="h-[0.2px] border border-green rounded-full my-2.5" />
       <p className="text-center text-white text-base">
-        &copy; TIMSAN 2022. All rights reserved.
+        &copy; TIMSAN 2023. All rights reserved.
       </p>
     </footer>
   )

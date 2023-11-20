@@ -9,4 +9,7 @@ import tilets from '../../data/tilets.json'
 export { timsanLogo, excos, courses, feedbacks, news, books, tilets }
 
 // Api Url
-export const BASE_API_URL = process.env.BASE_API_URL ? process.env.BASE_API_URL  as string : "http://localhost:3000"
+export const BASE_API_URL = process.env.NEXT_PUBLIC_BASE_API_URL  as string
+
+
+export const PAYSTACK_PUBLIC_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY as string

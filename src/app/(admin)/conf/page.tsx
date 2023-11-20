@@ -22,7 +22,7 @@ const conferenceData: DashboardCardProps[] = [
   },
 ]
 
-export default function Conference() {
+export default function Conf() {
   return (
     <main>
       <h1>Conference</h1>

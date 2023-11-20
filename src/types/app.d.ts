@@ -39,6 +39,15 @@ export type CourseCardProps = {
   }
 }
 
+export type ConferenceRegisterProps = {
+  fullName: string
+  emailAddress: string
+  phoneNumber: string
+  membershipType: "TIMSANITE" | "IOTB" | "OTHERS" | ""
+  institution: string
+  state: string
+}
+
 export type DashboardCardProps = {
   Icon: IconType
   total: number

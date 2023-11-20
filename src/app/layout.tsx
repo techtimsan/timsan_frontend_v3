@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="light">
-      <body className={`relative ${inter.className}`}>
+      <body className={`relative font-lato`}>
         <Providers>
           <Toaster position="top-right" />
           {children}
