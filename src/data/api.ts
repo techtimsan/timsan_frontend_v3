@@ -1,18 +1,18 @@
 export const chaptersData = [
   {
     text: "Zonal Chapter",
-    count: 15,
+    count: 4,
   },
   {
     text: "State Chapter",
-    count: 12,
+    count: 22,
   },
   {
-    text: "Local Chapters",
-    count: 30,
+    text: "Institutions",
+    count: "150+",
   },
   {
     text: "Members",
-    count: 120,
+    count: "500k+",
   },
 ]

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Newsletter from "./Newsletter"
 import { Link } from "@nextui-org/link"
-import { IoLogoFacebook, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io"
+import { IoLogoFacebook, IoLogoLinkedin, IoLogoInstagram, IoLogoTwitter } from "react-icons/io"
 
 import { BiLogoGmail } from "react-icons/bi"
 import { timsanLogo } from "@/utils/constants"
@@ -46,17 +46,17 @@ const Footer = () => {
           />
           <div className="flex items-center space-x-5 my-2.5">
             <Link
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/timsannational"
               isExternal
               color="foreground"
             >
               <IoLogoFacebook className="text-3xl text-white" />
             </Link>
-            <Link href="https://www.linkedin.com" isExternal color="foreground">
-              <IoLogoLinkedin className="text-3xl text-white" />
+            <Link href="https://www.twitter.com/timsannational" isExternal color="foreground">
+              <IoLogoTwitter className="text-3xl text-white" />
             </Link>
             <Link
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/timsannational"
               isExternal
               color="foreground"
             >
@@ -66,9 +66,9 @@ const Footer = () => {
           <div className="flex flex-col">
             <div className="flex space-x-2.5 items-center">
               <BiLogoGmail className="text-3xl" />
-              <p className="font-medium text-base">timsan.tuamm@gmail.com</p>
+              <p className="font-medium text-base">timsannational02ng@gmail.com</p>
             </div>
-            <p className="font-medium text-base">+234-706-363-4744</p>
+            <p className="font-medium text-base">+234-815-710-2237, +234-816-715-2308</p>
           </div>
         </div>
         <div className=""></div>
