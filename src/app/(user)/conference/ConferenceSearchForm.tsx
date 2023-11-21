@@ -73,7 +73,7 @@ label: "Email Address",
                     <ModalHeader>Personal Details</ModalHeader>
                     <ModalBody>
                         {fields.map((field) => (
-                            <CustomInput {...field} />
+                            <CustomInput key={field.name} {...field} />
                         ))}
                     </ModalBody>
                     <ModalFooter>

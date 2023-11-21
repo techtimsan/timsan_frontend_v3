@@ -13,7 +13,7 @@ const HeroSection = () => {
         <span className="text-green">Association</span> of Nigeria
       </h2>
       <p className="text-center">
-        Our Vision is to establish an Islamic Sufi Inclined Community goverened by the teachings of the Qur'an and Sunnah tailored towards the spiritual, moral, economic and social uprightness of Tijaniyyah adherents and its lovers which would be a model worthy of emulation. And our mission is to develop a united and enlightened society of Tijaniyyah adherents on campus fostered by true understanding of principles of Islam and Tijaniyyah doctrinces for the spiritual upliftment of its members throught its peaceful congregational obligatory worships and nurturing the love and characters of the Prophet (S.A.W) in them.
+        Our Vision is to establish an Islamic Sufi Inclined Community goverened by the teachings of the Qur&apos;an and Sunnah tailored towards the spiritual, moral, economic and social uprightness of Tijaniyyah adherents and its lovers which would be a model worthy of emulation. And our mission is to develop a united and enlightened society of Tijaniyyah adherents on campus fostered by true understanding of principles of Islam and Tijaniyyah doctrinces for the spiritual upliftment of its members throught its peaceful congregational obligatory worships and nurturing the love and characters of the Prophet (S.A.W) in them.
       </p>
       <div className="flex items-center space-x-3.5 w-full justify-center mt-5">
         <Button as={Link} href="/register">
