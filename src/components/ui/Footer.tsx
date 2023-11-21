@@ -65,10 +65,12 @@ const Footer = () => {
           </div>
           <div className="flex flex-col">
             <Link href="mailto:timsannational02ng@gmail.com" isExternal color="foreground" className="flex space-x-2.5 items-center">
-              <BiLogoGmail className="text-3xl" />
-              <p className="font-medium text-base">timsannational02ng@gmail.com</p>
+              <BiLogoGmail className="text-3xl text-white" />
+              <p className="font-medium text-base text-white">timsannational02ng@gmail.com</p>
             </Link>
-            <Link href="tel:+2348157102237" isExternal color="foreground" className="font-medium text-base">+234 8157102237, +234 8167152308</Link>
+            <Link href="tel:+2348157102237" isExternal color="foreground" className="font-medium text-base">
+              <p className="text-white">+234 8157102237, +234 8167152308</p>
+            </Link>
           </div>
         </div>
         <div className=""></div>
