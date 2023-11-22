@@ -63,25 +63,29 @@ label: "Email Address",
     return (
         <form onSubmit={handleSubmit(handleConferenceRegister)}>
             {/* <CustomInput {...field} /> */}
-            <Button onPress={onOpen}>Get Ticket</Button>
+            <Button onPress={onOpen} size="lg" className="font-semibold sm:font-medium bg-green text-white text-2xl py-8 sm:py-6 px-14 sm:px-8 mt-5">Get Ticket - 2023</Button>
             
             {/* register modal */}
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+            <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="">
             <ModalContent>
                 {(onClose) => (
                     <>
-                    <ModalHeader>Personal Details</ModalHeader>
+                    <ModalHeader className="pt-5">
+                      <h3 className="text-center w-full">Personal Details</h3>
+                    </ModalHeader>
                     <ModalBody>
                         {fields.map((field) => (
                             <CustomInput key={field.name} {...field} />
                         ))}
                     </ModalBody>
                     <ModalFooter>
+                <div className="w-full flex items-center justify-center mb-5">
                 <PaystackButton
           {...paymentButtonOptions} onSuccess={onSuccess}
           text="Make Payment"
           className="bg-green text-white px-10 py-3.5 rounded-md font-semibold"
         />
+                </div>
                     </ModalFooter>
                     </>
                 )}
