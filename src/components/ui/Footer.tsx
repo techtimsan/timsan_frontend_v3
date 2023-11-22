@@ -68,9 +68,14 @@ const Footer = () => {
               <BiLogoGmail className="text-3xl text-white" />
               <p className="font-medium text-base text-white">timsannational02ng@gmail.com</p>
             </Link>
+            <div className="flex items-center space-x-2.5">
             <Link href="tel:+2348157102237" isExternal color="foreground" className="font-medium text-base">
-              <p className="text-white">+234 8157102237, +234 8167152308</p>
+              <p className="text-white">+234 8157102237</p>
             </Link>
+            <Link href="tel:+2348167152308" isExternal color="foreground" className="font-medium text-base">
+              <p className="text-white">+234 8167152308</p>
+            </Link>
+            </div>
           </div>
         </div>
         <div className=""></div>

@@ -6,6 +6,11 @@
 
 /* remove scrollbar */
 @layer base {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
   main {
     scrollbar-width: none;
   }
@@ -25,6 +30,13 @@
 }
 
 @layer components {
+  /* react-slick carousel slider */
+  .timsan__custom_slider {
+    background: none;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
   .custom__section {
     @apply p-5 sm:px-20;
   }

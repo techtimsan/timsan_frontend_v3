@@ -19,30 +19,21 @@ export default function Home() {
       <HeroSection />
 
       {/* carousel slider */}
-      <div className="">
-        <HeroCarouselSlider />
-      </div>
+      <HeroCarouselSlider />
 
       {/* news */}
-      <section className="custom__section">
+      <section className="custom__section sm:mt-10">
         <h3 className="">TIMSAN BROADCAST</h3>
-        <h4 className="">Latest News</h4>
+        <h4 className="mb-5">Latest News</h4>
         <div>
           {news.map((newsInfo) => (
             <NewsCard key={newsInfo.title} {...newsInfo} />
           ))}
         </div>
-        <Button as={Link}>View all</Button>
-      </section>
-      {/* tilets */}
-      <section className="custom__section">
-        <h3>TILETS</h3>
-        <h4 className="text-green font-semibold text-xl">Our Session</h4>
-
-        {/* carousel */}
-
-        <Button>View all</Button>
-      </section>
+        <div className="w-full flex items-center justify-center mt-5">
+        <Button as={Link} size="lg" className="bg-white text-timsan-gray border-2">View all</Button>
+        </div>
+      </section>      
 
       {/* executives */}
       <section className="custom__section">

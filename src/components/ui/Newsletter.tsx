@@ -3,7 +3,7 @@ import NewsletterForm from "./NewsletterForm"
 const Newsletter = () => {
   
   return (
-    <div className="bg-green text-white absolute -top-20 p-5 mx-2.5 sm:flex sm:items-center sm:justify-between sm:gap-x-10">
+    <div className="bg-green text-white absolute -top-20 p-5 mx-2.5 sm:flex sm:items-center sm:justify-between sm:gap-x-10 sm:w-fit">
       <div className="sm:w-1/2">
         <h3 className="font-semibold text-xl mb-1.5">
           Subscribe to our bi-weekly Newsletter

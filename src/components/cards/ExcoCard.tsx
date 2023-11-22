@@ -4,12 +4,12 @@ import { BsArrowReturnLeft, BsArrowReturnRight } from "react-icons/bs"
 
 const ExcoCard = ({ name, imageUrl, position }: ExcoCardProps) => {
   return (
-    <div className="">
-      <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center flex-col">
+      <div className="flex items-center justify-center bg-transparent border-2 border-green w-[120px] h-[120px] rounded-full">
         <Avatar src={imageUrl} className="w-28 h-28 border-4 border-black"  />
       </div>
       {/* description */}
-      <div>
+      <div className="">
         <div className="bg-green text-white rounded-md">
           <h3 className="text-center font-semibold py-1.5">{name}</h3>
         </div>

@@ -25,10 +25,10 @@ const NewsletterForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(handleNewsletter)} className="w-full">
-      <CustomInput customStyle="w-full bg-transparent my-0" {...field} />
+    <form onSubmit={handleSubmit(handleNewsletter)} className="w-full sm:flex sm:items-center">
+      <CustomInput  customStyle="w-[300px] bg-transparent overflow-hidden sm:bg-transparent focus:bg-none focus:outline-none active:bg-none active:outline-none sm:rounded-none my-0" {...field} />
       <Button
-        className="bg-green text-white font-medium px-8 my-0"
+        className="bg-green sm:rounded-none text-white font-medium px-8 my-0"
         type="submit"
       >
         Subscribe

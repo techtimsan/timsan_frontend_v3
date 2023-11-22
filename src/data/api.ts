@@ -13,6 +13,6 @@ export const chaptersData = [
   },
   {
     text: "Members",
-    count: "500k+",
+    count: "50k+",
   },
 ]

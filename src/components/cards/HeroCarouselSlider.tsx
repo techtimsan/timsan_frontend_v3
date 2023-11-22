@@ -1,10 +1,32 @@
 "use client"
 
 import { HeroCarouselCardProps } from "@/types/app"
-import { Swiper, SwiperSlide } from "swiper/react"
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick'
 import { HeroCarouselCard } from "."
 
 const HeroCarouselSlider = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    centerMode: true,
+    centerPadding: "25%",
+    responsive: [
+      {
+        breakpoint: 767, // Set the breakpoint for mobile
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          arrows: true
+        },
+      },
+    ],
+  };
+
   const carouselData: HeroCarouselCardProps[] = [
     {
       title: "TIMSAN SOUTHWEST Camping Exercise at Kebbi State 01",
@@ -12,7 +34,7 @@ const HeroCarouselSlider = () => {
     },
     {
       title: "TIMSAN SOUTHWEST Camping Exercise at Kebbi State 02",
-      thumbnailUrl: "/assets/news/news_thumbnail01.png",
+      thumbnailUrl: "/assets/carousel_bg02.jpg",
     },
     {
       title: "TIMSAN SOUTHWEST Camping Exercise at Kebbi State 03",
@@ -20,23 +42,11 @@ const HeroCarouselSlider = () => {
     },
   ]
   return (
-    // <Swiper className="flex">
-    //   {carouselData.map((data) => (
-    //     <SwiperSlide key={data.title} className="">
-    //       <HeroCarouselCard {...data} />
-    //     </SwiperSlide>
-    //   ))}
-    // </Swiper>
-    <Swiper slidesPerView={1} spaceBetween={60}>
-      <SwiperSlide className="">
-        {/* <HeroCarouselCard {...carouselData[0]} /> */}
-        one
-      </SwiperSlide>
-      <SwiperSlide>
-        {/* <HeroCarouselCard {...carouselData[1]} /> */}
-        two
-      </SwiperSlide>
-    </Swiper>
+    <Slider {...settings} className="timsan_custom__slider">
+      {carouselData.map((carousel, index) => (
+        <HeroCarouselCard key={carousel.title} {...carousel} />
+      ))}
+    </Slider>
   )
 }
 

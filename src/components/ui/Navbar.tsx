@@ -171,7 +171,7 @@ export default function App() {
       </NavbarContent>
 
       {/* menu */}
-      <NavbarMenu className="h-[200px]">
+      <NavbarMenu className="h-fit">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item.title}-${index}`}>
             <Link
