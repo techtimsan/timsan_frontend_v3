@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { CustomInput } from "@/components/custom"
 import { CustomInputProps, LoginProps } from "@/types/app"
 import { Button } from "@nextui-org/button"
@@ -27,6 +28,7 @@ const FormFields = () => {
       required: true,
       label: "Password",
       register,
+      iconRight: true
     },
   ]
 
@@ -36,11 +38,11 @@ const FormFields = () => {
     console.log(data)
   }
   return (
-    <form onSubmit={handleSubmit(handleLogin)}>
+    <form onSubmit={handleSubmit(handleLogin)} className="w-full">
       {formFields.map((field) => (
-        <CustomInput key={field.name} {...field} />
+        <CustomInput key={field.name} {...field} customStyle="rounded-none" />
       ))}
-      <Button type="submit">Login</Button>
+      <Button size="lg" className="bg-white shadow-md px-20 font-semibold" type="submit">Login</Button>
     </form>
   )
 }

@@ -2,14 +2,19 @@ import { Navbar } from "@/components/ui"
 import Image from "next/image"
 import { Link } from "@nextui-org/link"
 import FormFields from "./FormFields"
-import { timsanLogo } from "@/utils/constants"
+import { loginRegisterBG, timsanLogo } from "@/utils/constants"
 
 export default function Login() {
   return (
-    <main className="h-screen">
+    <main className="h-screen overflow-hidden">
       <Navbar />
-      <section className="bg-green h-full p-5 text-center text-white">
-        <div>
+      <div className="sm:flex sm:items-center"> 
+      <section className="hidden sm:block sm:w-1/2 sm:h-screen sm:overflow-hidden sm:relative">
+        <div className="sm:absolute sm:bg-black/50 sm:inset-0" />
+        <Image src={loginRegisterBG} alt="Login BG" className="w-full h-full object-cover object-center" />
+      </section>
+      <section className="bg-green p-5 text-center flex flex-col items-center justify-center text-white sm:w-1/2 h-screen space-y-5 sm:px-32">
+        <div className="w-full">
           <div className="flex items-center justify-center">
             <Image src={timsanLogo} alt="Timsan Logo" className="w-20 h-20" />
           </div>
@@ -26,9 +31,10 @@ export default function Login() {
         <FormFields />
         <div className="flex items-center space-x-2.5">
           <p>Don&apos;t have an account?</p>
-          <Link href="/register">Register</Link>
+          <Link href="/register" className="text-timsan-gray underline font-semibold">Register</Link>
         </div>
       </section>
+      </div>
     </main>
   )
 }

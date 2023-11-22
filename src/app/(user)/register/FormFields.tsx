@@ -97,7 +97,7 @@ const FormFields = () => {
     // toast.success()
   }
   return (
-    <form onSubmit={handleSubmit(handleRegister)}>
+    <form onSubmit={handleSubmit(handleRegister)} className="w-full">
       <Controller
         name="userType"
         control={control}
@@ -121,7 +121,7 @@ const FormFields = () => {
       {formFields.map((field) => (
         <CustomInput key={field.name} {...field} />
       ))}
-      <Button type="submit">Register</Button>
+      <Button size="lg" className="bg-white shadow-md px-20 font-semibold" type="submit">Register</Button>
     </form>
   )
 }
