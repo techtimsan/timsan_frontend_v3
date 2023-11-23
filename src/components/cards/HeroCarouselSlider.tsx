@@ -15,9 +15,11 @@ const HeroCarouselSlider = () => {
     slidesToShow: 1,
     centerMode: true,
     centerPadding: "25%",
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 767, // Set the breakpoint for mobile
+        breakpoint: 767,
         settings: {
           slidesToShow: 1,
           centerMode: false,

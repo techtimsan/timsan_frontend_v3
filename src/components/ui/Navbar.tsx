@@ -177,6 +177,7 @@ export default function App() {
             <Link
               href={item.url}
               className="uppercase w-full items-center justify-center"
+              size="lg"
             >
               {item.title}
             </Link>

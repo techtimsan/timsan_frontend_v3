@@ -35,8 +35,8 @@ const Footer = () => {
       <div className="flex w-full items-center justify-center">
         <Newsletter />
       </div>
-      <section className="grid grid-cols-3 pt-5 sm:pt-0">
-        <div className="text-white">
+      <section className="grid grid-cols-3 gap-x-5 pt-5 sm:pt-0">
+        <div className="text-white col-span-2">
           <Image
             src={timsanLogo}
             alt="Timsan Logo"
@@ -64,22 +64,22 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex flex-col">
-            <Link href="mailto:timsannational02ng@gmail.com" isExternal color="foreground" className="flex space-x-2.5 items-center">
+            <Link href="mailto:timsannational02ng@gmail.com" isExternal color="foreground" className="flex space-x-1.5 items-center">
               <BiLogoGmail className="text-3xl text-white" />
-              <p className="font-medium text-base text-white">timsannational02ng@gmail.com</p>
+              <p className="font-medium text-sm sm:text-base text-white">timsannational02ng@gmail.com</p>
             </Link>
             <div className="flex items-center space-x-2.5">
-            <Link href="tel:+2348157102237" isExternal color="foreground" className="font-medium text-base">
+            <Link href="tel:+2348157102237" isExternal color="foreground" className="font-medium text-xs sm:text-base">
               <p className="text-white">+234 8157102237</p>
             </Link>
-            <Link href="tel:+2348167152308" isExternal color="foreground" className="font-medium text-base">
+            <Link href="tel:+2348167152308" isExternal color="foreground" className="font-medium text-xs sm:text-base">
               <p className="text-white">+234 8167152308</p>
             </Link>
             </div>
           </div>
         </div>
-        <div className=""></div>
-        <div>
+        {/* right side */}
+        <div className="col-span-1 justify-items-end">
           <h3 className="text-white font-medium sm:text-xl">Quick Links</h3>
           <hr className="border-green w-10 border-[1.5px] rounded-full mb-3.5" />
           <div className="space-y-2.5">

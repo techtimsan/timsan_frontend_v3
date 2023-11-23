@@ -5,8 +5,7 @@ import { BsArrowReturnLeft, BsArrowReturnRight } from "react-icons/bs"
 const ExcoCard = ({ name, imageUrl, position }: ExcoCardProps) => {
   return (
     <div className="w-full flex items-center flex-col">
-      <div className="flex items-center justify-center bg-transparent relative border-2 border-green w-[130px] h-[130px] rounded-full">
-        
+      <div className="flex items-center justify-center bg-transparent relative border-2 border-green w-[130px] h-[130px] rounded-full">  
         <Avatar src={imageUrl} className="w-28 h-28 border-4 border-black object-cover object-center"  />
       </div>
       {/* description */}
