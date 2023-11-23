@@ -1,32 +1,62 @@
 [
   {
-    "name": "Al-Awwal 01",
-    "position": "National President",
-    "imageUrl": "/assets/excos/seyyid_awwal.png"
+    "name": "Awwal Adewuyi M.",
+    "position": "Muqoddam / President",
+    "imageUrl": "/assets/excos/awwal_adewuyi.jpg"
   },
   {
-    "name": "Al-Awwal 02",
-    "position": "National President",
-    "imageUrl": "/assets/excos/seyyid_awwal.png"
+    "name": "AbdulRahman Muhammad",
+    "position": "Secretary Gen.",
+    "imageUrl": "/assets/excos/abdulrahman_muhammad.jpg"
   },
   {
-    "name": "Al-Awwal 03",
-    "position": "National President",
-    "imageUrl": "/assets/excos/seyyid_awwal.png"
+    "name": "AlMaruf Sodiq I.",
+    "position": "Welfare 2",
+    "imageUrl": "/assets/excos/almaruf_sodiq.jpg"
   },
   {
-    "name": "Al-Awwal 04",
-    "position": "National President",
-    "imageUrl": "/assets/excos/seyyid_awwal.png"
+    "name": "Ahmad Muhammad A.",
+    "position": "Noibul Muqoddam",
+    "imageUrl": "/assets/excos/ahmad_muhammad.jpg"
   },
   {
-    "name": "Al-Awwal 05",
-    "position": "National President",
-    "imageUrl": "/assets/excos/seyyid_awwal.png"
+    "name": "Fatimah Muhammad",
+    "position": "Muqoddamah",
+    "imageUrl": "/assets/excos/fatimah_muhammad.jpg"
   },
   {
-    "name": "Al-Awwal 06",
-    "position": "National President",
-    "imageUrl": "/assets/excos/seyyid_awwal.png"
+    "name": "Kabir Abdullahi",
+    "position": "",
+    "imageUrl": "/assets/excos/kabir_abdullahi.jpg"
+  },
+  {
+    "name": "Kawthar Adegbiji",
+    "position": "Noibul Muqoddamah",
+    "imageUrl": "/assets/excos/kawthar_adegbiji.jpg"
+  },
+  {
+    "name": "Hasan Mansur M.",
+    "position": "Welfare 1",
+    "imageUrl": "/assets/excos/hasan_mansur.jpg"
+  },
+  {
+    "name": "Musa Saleh",
+    "position": "Asst. Secretary Gen.",
+    "imageUrl": "/assets/excos/musa_saleh.jpg"
+  },
+  {
+    "name": "Mustapha AbdkuKareem O.",
+    "position": "P.R.O 2",
+    "imageUrl": "/assets/excos/mustapha_abdulkareem.jpg"
+  },
+  {
+    "name": "Musa Saidu N.",
+    "position": "Financial Sec.",
+    "imageUrl": "/assets/excos/musa_saidu.PNG"
+  },
+  {
+    "name": "Nimatullah Zubair",
+    "position": "Treasurer",
+    "imageUrl": "/assets/excos/nimatullah_zubair.jpg"
   }
 ]

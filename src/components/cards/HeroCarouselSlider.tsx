@@ -29,6 +29,10 @@ const HeroCarouselSlider = () => {
 
   const carouselData: HeroCarouselCardProps[] = [
     {
+      title: "TIMSAN SOUTHWEST Camping Exercise at Kebbi State 02",
+      thumbnailUrl: "/assets/carousel_bg02.jpg",
+    },
+    {
       title: "TIMSAN SOUTHWEST Camping Exercise at Kebbi State 01",
       thumbnailUrl: "/assets/news/news_thumbnail01.png",
     },
@@ -39,7 +43,7 @@ const HeroCarouselSlider = () => {
     {
       title: "TIMSAN SOUTHWEST Camping Exercise at Kebbi State 03",
       thumbnailUrl: "/assets/news/news_thumbnail01.png",
-    },
+    },    
   ]
   return (
     <Slider {...settings} className="timsan_custom__slider">

@@ -40,8 +40,8 @@ export default function Home() {
         <h3>EXECUTIVES</h3>
         <h4 className="text-green text-center">Our National Executives</h4>
 
-        <div className="grid grid-cols-2 gap-3.5 my-5">
-          {excos.splice(0, 4).map((exco) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-10 my-5 sm:my-10">
+          {excos.map((exco) => (
             <ExcoCard key={exco.name} {...exco} />
           ))}
         </div>
