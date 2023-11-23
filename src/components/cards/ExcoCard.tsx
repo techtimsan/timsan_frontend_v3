@@ -12,11 +12,11 @@ const ExcoCard = ({ name, imageUrl, position }: ExcoCardProps) => {
       {/* description */}
       <div className="w-full">
         <div className="bg-green text-white rounded-md">
-          <h3 className="text-center font-semibold py-1.5">{name}</h3>
+          <h3 className="text-center font-semibold py-1.5 truncate">{name}</h3>
         </div>
         <div className="flex w-full items-center justify-center space-x-1.5 text-gray-900">
           <BsArrowReturnRight size={25} color="black" />
-          <h4 className="whitespace-pre-wrap text-center">{position}</h4>
+          <h4 className="whitespace-pre-wrap text-center truncate">{position}</h4>
           <BsArrowReturnLeft size={25} color="black" />
         </div>
       </div>

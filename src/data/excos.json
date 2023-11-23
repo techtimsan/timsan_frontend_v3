@@ -1,18 +1,8 @@
 [
   {
     "name": "Awwal Adewuyi M.",
-    "position": "Muqoddam / President",
+    "position": "Muqoddam",
     "imageUrl": "/assets/excos/awwal_adewuyi.jpg"
-  },
-  {
-    "name": "AbdulRahman Muhammad",
-    "position": "Secretary Gen.",
-    "imageUrl": "/assets/excos/abdulrahman_muhammad.jpg"
-  },
-  {
-    "name": "AlMaruf Sodiq I.",
-    "position": "Welfare 2",
-    "imageUrl": "/assets/excos/almaruf_sodiq.jpg"
   },
   {
     "name": "Ahmad Muhammad A.",
@@ -20,24 +10,9 @@
     "imageUrl": "/assets/excos/ahmad_muhammad.jpg"
   },
   {
-    "name": "Fatimah Muhammad",
-    "position": "Muqoddamah",
-    "imageUrl": "/assets/excos/fatimah_muhammad.jpg"
-  },
-  {
-    "name": "Kabir Abdullahi",
-    "position": "",
-    "imageUrl": "/assets/excos/kabir_abdullahi.jpg"
-  },
-  {
-    "name": "Kawthar Adegbiji",
-    "position": "Noibul Muqoddamah",
-    "imageUrl": "/assets/excos/kawthar_adegbiji.jpg"
-  },
-  {
-    "name": "Hasan Mansur M.",
-    "position": "Welfare 1",
-    "imageUrl": "/assets/excos/hasan_mansur.jpg"
+    "name": "AbdulRahman Muhammad",
+    "position": "Secretary Gen.",
+    "imageUrl": "/assets/excos/abdulrahman_muhammad.jpg"
   },
   {
     "name": "Musa Saleh",
@@ -45,9 +20,9 @@
     "imageUrl": "/assets/excos/musa_saleh.jpg"
   },
   {
-    "name": "Mustapha AbdkuKareem O.",
-    "position": "P.R.O 2",
-    "imageUrl": "/assets/excos/mustapha_abdulkareem.jpg"
+    "name": "Nimatullah Zubair",
+    "position": "Treasurer",
+    "imageUrl": "/assets/excos/nimatullah_zubair.jpg"
   },
   {
     "name": "Musa Saidu N.",
@@ -55,8 +30,33 @@
     "imageUrl": "/assets/excos/musa_saidu.PNG"
   },
   {
-    "name": "Nimatullah Zubair",
-    "position": "Treasurer",
-    "imageUrl": "/assets/excos/nimatullah_zubair.jpg"
+    "name": "Kabir Abdullahi",
+    "position": "P.R.O 1",
+    "imageUrl": "/assets/excos/kabir_abdullahi.jpg"
+  },
+  {
+    "name": "Hasan Mansur M.",
+    "position": "Welfare 1",
+    "imageUrl": "/assets/excos/hasan_mansur.jpg"
+  },  
+  {
+    "name": "Mustapha AbdkuKareem O.",
+    "position": "P.R.O 2",
+    "imageUrl": "/assets/excos/mustapha_abdulkareem.jpg"
+  },
+  {
+    "name": "AlMaruf Sodiq I.",
+    "position": "Welfare 2",
+    "imageUrl": "/assets/excos/almaruf_sodiq.jpg"
+  },
+  {
+    "name": "Fatimah Muhammad",
+    "position": "Muqoddamah",
+    "imageUrl": "/assets/excos/fatimah_muhammad.jpg"
+  },
+  {
+    "name": "Kawthar Adegbiji",
+    "position": "Noibul Muqoddamah",
+    "imageUrl": "/assets/excos/kawthar_adegbiji.jpg"
   }
 ]

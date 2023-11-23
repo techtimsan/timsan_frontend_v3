@@ -27,7 +27,7 @@ const HeroSection = () => {
       {/* hero cards */}
       <div className="grid grid-cols-2 gap-4 sm:space-x-8 mt-8 sm:mt-12 sm:my-10 sm:flex sm:w-full sm:items-center sm:justify-center">
         {chaptersData.map(({ text, count }) => (
-          <Card key={text} shadow="sm" isPressable className="pl-5 sm:w-[180px] sm:h-[150px] rounded-none">
+          <Card key={text} shadow="sm" isPressable className="pl-5 sm:w-[180px] sm:h-[150px] rounded-md border-2">
             <CardBody className="py-3.5 px-0 flex items-start justify-center">
               <h3 className="text-green font-bold text-5xl sm:text-5xl">
                 {count}
