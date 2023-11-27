@@ -8,11 +8,11 @@ import { Select, SelectItem } from "@nextui-org/select"
 import toast from "react-hot-toast"
 import { BASE_API_URL } from "@/utils/constants"
 import { redirect } from "next/navigation"
-import { useRouter } from "next/navigation"
 import { CircularProgress } from "@nextui-org/progress"
+import { useState } from "react"
 
 const FormFields = () => {
-  const router = useRouter()
+  const [registerSuccess, setRegisterSuccess] = useState<boolean>(false)
 
   const defaultValues: RegisterProps = {
     userType: "",
@@ -71,9 +71,6 @@ const FormFields = () => {
       register,
       iconRight: true,
     },
-    //   {
-    //     name:
-    // }
   ]
 
   const handleRegister: SubmitHandler<RegisterProps> = async (data, e) => {
@@ -97,26 +94,16 @@ const FormFields = () => {
         }),
       })
 
-      // Check if the response is successful (status code in the range 200-299)
-      // if (res.ok) {
       const responseData = await res.json()
 
       if (responseData.success !== true) {
         toast.error(responseData.message)
       } else {
         toast.success(responseData.message)
-
-        // redirect to login page
-        redirect("/login")
+        setRegisterSuccess(true)
       }
       console.log("api response", responseData)
-      // Perform any actions or update the UI based on the response data
-      // } else {
-      //   // Handle error scenarios
-      //   console.error("API error:", res)
-      // }
     } catch (error) {
-      // Handle network or other errors
       toast.error("Sorry! Something went wrong.")
       console.error("Error:", error)
     }

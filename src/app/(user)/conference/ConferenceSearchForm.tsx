@@ -16,10 +16,10 @@ import { PaystackButton } from "react-paystack"
 import { handlePaystackPayment } from "@/utils/payments"
 import { BASE_API_URL } from "@/utils/constants"
 import toast from "react-hot-toast"
-import { useRouter } from "next/navigation"
+import { redirect } from "next/navigation"
 
 export const ConferenceSearchForm = () => {
-  const router = useRouter()
+  
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const { register, handleSubmit, watch } = useForm<ConferenceRegisterProps>()
 
@@ -63,7 +63,7 @@ export const ConferenceSearchForm = () => {
     e!.preventDefault()
 
     try {
-      const res = await fetch(`${BASE_API_URL}/api/v1/user/login`, {
+      const res = await fetch(`${BASE_API_URL}/api/v1/conference/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,15 +79,12 @@ export const ConferenceSearchForm = () => {
         toast.error(responseData.message)
       } else {
         toast.success(responseData.message)
-
-        // redirect to login page
-        // router.push("/")
       }
       console.log("api response", responseData)
     } catch (error) {
       toast.error("Sorry! Something went wrong.")
       console.error("Error:", error)
-    }
+    } 
   }
 
   const onSuccess = (reference: any) => {

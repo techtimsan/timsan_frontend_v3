@@ -8,16 +8,25 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import { BASE_API_URL } from "@/utils/constants"
 import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation"
 import { CircularProgress } from "@nextui-org/progress"
 
 const FormFields = () => {
-  const router = useRouter()
+  const [loginSuccess, setLoginSuccess] = useState<boolean>(false)
+
+  if (loginSuccess){
+    redirect("/conference")
+  }
+
   const defaultValues: LoginProps = {
     email: "",
     password: "",
   }
-  const { register, handleSubmit, formState: { isSubmitting, isValid} } = useForm<LoginProps>({
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, isValid },
+  } = useForm<LoginProps>({
     defaultValues,
   })
   const formFields: CustomInputProps<LoginProps>[] = [
@@ -59,15 +68,13 @@ const FormFields = () => {
         toast.error(responseData.message)
       } else {
         toast.success(responseData.message)
-
-        // redirect to login page
-        redirect("/conference")
+        setLoginSuccess(true)
       }
       console.log("api response", responseData)
     } catch (error) {
       toast.error("Sorry! Something went wrong.")
       console.error("Error:", error)
-    }
+    } 
   }
   return (
     <form onSubmit={handleSubmit(handleLogin)} className="w-full">
