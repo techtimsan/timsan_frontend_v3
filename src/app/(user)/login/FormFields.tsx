@@ -8,6 +8,7 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import { BASE_API_URL } from "@/utils/constants"
 import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
+import { redirect } from 'next/navigation'
 import { CircularProgress } from "@nextui-org/progress"
 
 const FormFields = () => {
@@ -60,7 +61,7 @@ const FormFields = () => {
         toast.success(responseData.message)
 
         // redirect to login page
-        router.push("/conference")
+        redirect("/conference")
       }
       console.log("api response", responseData)
     } catch (error) {

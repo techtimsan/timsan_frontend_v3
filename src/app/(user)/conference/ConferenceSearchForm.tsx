@@ -81,7 +81,7 @@ export const ConferenceSearchForm = () => {
         toast.success(responseData.message)
 
         // redirect to login page
-        router.push("/")
+        // router.push("/")
       }
       console.log("api response", responseData)
     } catch (error) {

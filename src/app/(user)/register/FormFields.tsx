@@ -7,7 +7,7 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form"
 import { Select, SelectItem } from "@nextui-org/select"
 import toast from "react-hot-toast"
 import { BASE_API_URL } from "@/utils/constants"
-// import { redirect } from "next/navigation"
+import { redirect } from "next/navigation"
 import { useRouter } from "next/navigation"
 import { CircularProgress } from "@nextui-org/progress"
 
@@ -107,7 +107,7 @@ const FormFields = () => {
         toast.success(responseData.message)
 
         // redirect to login page
-        router.push("/login")
+        redirect("/login")
       }
       console.log("api response", responseData)
       // Perform any actions or update the UI based on the response data

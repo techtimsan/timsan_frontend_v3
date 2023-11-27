@@ -29,10 +29,12 @@ export default function App() {
     {
       title: "Tilets",
       url: "/tilets",
+      isDisabled: true
     },
     {
       title: "E-Library",
       url: "e-library",
+      isDisabled: true
     },
     {
       title: "Our Chapters",
@@ -72,12 +74,12 @@ export default function App() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
         <NavbarItem>
-          <Link color="foreground" href="/tilets">
+          <Link color="foreground" href="/tilets" isDisabled>
             TILETS
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/e-library">
+          <Link color="foreground" href="/e-library" isDisabled>
             E-LIBRARY
           </Link>
         </NavbarItem>
@@ -178,6 +180,7 @@ export default function App() {
               href={item.url}
               className="uppercase w-full items-center justify-center"
               size="lg"
+              isDisabled={item.isDisabled}
             >
               {item.title}
             </Link>
