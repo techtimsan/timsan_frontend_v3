@@ -61,7 +61,7 @@ const FormFields = () => {
         toast.success(responseData.message)
 
         // redirect to login page
-        redirect("/conference")
+        // redirect("/conference")
       }
       console.log("api response", responseData)
     } catch (error) {
