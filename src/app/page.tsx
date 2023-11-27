@@ -10,9 +10,24 @@ import {
 } from "@/components/cards"
 import { Link } from "@nextui-org/link"
 import { ChapterMap } from "@/components/utils"
-import { excos, news } from "@/utils/constants"
+import { BASE_API_URL, excos, news } from "@/utils/constants"
 
-export default function Home() {
+async function getData() {
+  const res = await fetch(`${BASE_API_URL}`)
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    console.log("Failed to fetch data")
+  }
+
+  return res.json()
+}
+
+export default async function Home() {
+  const data = await getData()
+  console.log(data)
   return (
     <main>
       <Navbar />
@@ -31,9 +46,15 @@ export default function Home() {
           ))}
         </div>
         <div className="w-full flex items-center justify-center mt-5">
-        <Button as={Link} size="lg" className="bg-white text-timsan-gray border-2">View all</Button>
+          <Button
+            as={Link}
+            size="lg"
+            className="bg-white text-timsan-gray border-2"
+          >
+            View all
+          </Button>
         </div>
-      </section>      
+      </section>
 
       {/* executives */}
       <section className="custom__section">

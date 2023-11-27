@@ -6,7 +6,7 @@ import { loginRegisterBG, timsanLogo } from "@/utils/constants"
 
 export default function Login() {
   return (
-    <main className="h-screen overflow-hidden">
+    <main className="h-screen">
       <Navbar />
       <div className="sm:flex sm:items-center"> 
       <section className="hidden sm:block sm:w-1/2 sm:h-screen sm:overflow-hidden sm:relative">
