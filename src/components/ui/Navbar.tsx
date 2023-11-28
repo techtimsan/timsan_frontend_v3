@@ -17,24 +17,36 @@ import {
 } from "@nextui-org/dropdown"
 import { Link } from "@nextui-org/link"
 import { Button } from "@nextui-org/button"
+import { Avatar } from "@nextui-org/avatar"
 import Image from "next/image"
 import { HiOutlineMenuAlt1 } from "react-icons/hi"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { useState } from "react"
+import { useAuth } from "@/hooks"
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+
+  const auth = useAuth((state) => state)
+
+  const handleLogout = () => {
+    if (auth.user !== null) {
+      auth.logout(auth.user)
+    }
+
+    return
+  }
 
   const menuItems = [
     {
       title: "Tilets",
       url: "/tilets",
-      isDisabled: true
+      isDisabled: true,
     },
     {
       title: "E-Library",
       url: "e-library",
-      isDisabled: true
+      isDisabled: true,
     },
     {
       title: "Our Chapters",
@@ -99,7 +111,11 @@ export default function App() {
             // }}
           >
             <DropdownItem>
-              <Link href="/institution/oau" color="foreground" className="w-full">
+              <Link
+                href="/institution/oau"
+                color="foreground"
+                className="w-full"
+              >
                 Institution
               </Link>
             </DropdownItem>
@@ -170,6 +186,36 @@ export default function App() {
             Donate Now
           </Button>
         </NavbarItem>
+
+        {/* avatar */}
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="sm" />
+            </DropdownTrigger>
+          </NavbarItem>
+          <DropdownMenu aria-label="Our Chapters" className="w-full">
+            <DropdownItem>
+              <Link
+                href="/profile"
+                isDisabled
+                color="foreground"
+                className="w-full"
+              >
+                Profile
+              </Link>
+            </DropdownItem>
+            <DropdownItem>
+              {auth.user !== null ? (
+                <Button size="sm" onClick={() => handleLogout()}>Log out</Button>
+              ) : (
+                <Link href="/login" color="foreground">
+                  Log in
+                </Link>
+              )}
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
       </NavbarContent>
 
       {/* menu */}
