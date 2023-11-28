@@ -10,9 +10,11 @@ import toast from "react-hot-toast"
 import { useRouter } from "next/navigation"
 import { redirect } from "next/navigation"
 import { CircularProgress } from "@nextui-org/progress"
+import { useAuth } from "@/hooks"
 
 const FormFields = () => {
   const [loginSuccess, setLoginSuccess] = useState<boolean>(false)
+  const userLogin = useAuth((state) => state.login)
 
   if (loginSuccess){
     redirect("/conference")
@@ -69,6 +71,9 @@ const FormFields = () => {
       } else {
         toast.success(responseData.message)
         setLoginSuccess(true)
+
+        // save user to state
+        userLogin(responseData.user)
       }
       console.log("api response", responseData)
     } catch (error) {
@@ -83,6 +88,7 @@ const FormFields = () => {
       ))}
       <Button
         size="lg"
+        disabled={isSubmitting || !isValid}
         className="bg-white shadow-md px-20 font-semibold disabled:cursor-not-allowed"
         type="submit"
       >

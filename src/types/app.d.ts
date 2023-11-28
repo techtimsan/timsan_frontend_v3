@@ -40,12 +40,10 @@ export type CourseCardProps = {
 }
 
 export type ConferenceRegisterProps = {
-  fullName: string
+  attendeeId: string
   emailAddress: string
-  phoneNumber: string
   membershipType: "TIMSANITE" | "IOTB" | "OTHERS" | ""
-  institution: string
-  state: string
+  paymentStatus: "PAYMENT_SUCCESSFUL" | "PAYMENT_PENDING" | ""
 }
 
 export type DashboardCardProps = {
