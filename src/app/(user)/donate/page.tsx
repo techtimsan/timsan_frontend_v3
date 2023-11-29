@@ -84,7 +84,7 @@ export default function Donate() {
               Account Number
             </h3>
             <h5 className="text-timsan-gray font-semibold mt-1.5">
-              567258736Y89R5
+            0157080925
             </h5>
           </div>
         </div>
