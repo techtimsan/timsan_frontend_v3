@@ -188,34 +188,42 @@ export default function App() {
         </NavbarItem>
 
         {/* avatar */}
-        <Dropdown>
-          <NavbarItem>
-            <DropdownTrigger>
-              <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" size="sm" />
-            </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu aria-label="Our Chapters" className="w-full">
-            <DropdownItem>
-              <Link
-                href="/profile"
-                isDisabled
-                color="foreground"
-                className="w-full"
-              >
-                Profile
-              </Link>
-            </DropdownItem>
-            <DropdownItem>
-              {auth.user !== null ? (
-                <Button size="sm" onClick={() => handleLogout()}>Log out</Button>
-              ) : (
-                <Link href="/login" color="foreground">
-                  Log in
+        {auth.authState === "logged in" && (
+          <Dropdown>
+            <NavbarItem>
+              <DropdownTrigger>
+                <Avatar
+                  src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
+                  size="sm"
+                  className="cursor-pointer"
+                />
+              </DropdownTrigger>
+            </NavbarItem>
+            <DropdownMenu aria-label="Our Chapters" className="w-full">
+              <DropdownItem>
+                <Link
+                  href="/profile"
+                  isDisabled
+                  color="foreground"
+                  className="w-full"
+                >
+                  Profile
                 </Link>
-              )}
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+              </DropdownItem>
+              <DropdownItem>
+                {auth.user !== null ? (
+                  <Button size="sm" onClick={() => handleLogout()} className="font-semibold text-red-800 text-sm px-0 w-full mx-0 bg-transparent text-left">
+                    Log out
+                  </Button>
+                ) : (
+                  <Link href="/login" color="foreground">
+                    Log in
+                  </Link>
+                )}
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        )}
       </NavbarContent>
 
       {/* menu */}
