@@ -103,6 +103,15 @@ export type LoginProps = {
   password: string
 }
 
+export type VerifyEmailProps = {
+  email: string
+}
+
+export type ResetPasswordProps = {
+  oldPassword: string
+  newPassword: string
+}
+
 export type RegisterProps = {
   userType: string // "Member" | "Institution" | "State" | "Zonal"
   fullname: string
