@@ -70,7 +70,7 @@ export type TiletCardProps = {
 export type DonationProps = {
   name: string
   email: string
-  amount: number // string
+  amount: number | null
   paymentOption?: string
 }
 
