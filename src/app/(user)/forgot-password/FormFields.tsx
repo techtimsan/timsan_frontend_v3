@@ -12,7 +12,6 @@ import { Button } from "@nextui-org/button"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { BASE_API_URL } from "@/utils/constants"
 import toast from "react-hot-toast"
-import { useRouter } from "next/navigation"
 import { redirect } from "next/navigation"
 import { CircularProgress } from "@nextui-org/progress"
 import { useAuth } from "@/hooks"
@@ -20,7 +19,13 @@ import { useAuth } from "@/hooks"
 const FormFields = () => {
   const [resetPasswordSuccess, setResetPasswordSuccess] =
     useState<boolean>(false)
-  const userLogin = useAuth((state) => state.login)
+
+  // can only access route if logged in...
+  const user = useAuth((state) => state)
+
+  if (user.authState !== "logged in") {
+    redirect("/login")
+  }
 
   if (resetPasswordSuccess) {
     redirect("/login")
@@ -61,27 +66,32 @@ const FormFields = () => {
     e!.preventDefault()
 
     try {
-      const res = await fetch(`${BASE_API_URL}/api/v1/user/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            oldPassword: data.oldPassword,
-            newPassword: data.newPassword
-        }),
-      })
-
-      const responseData = await res.json()
-
-      if (responseData.success !== true) {
-        toast.error(responseData.message)
+      if (!user.user?.id) {
+        // toast.error("")
+        redirect("/login")
       } else {
-        toast.success(responseData.message)
-        setResetPasswordSuccess(true)
+        const res = await fetch(
+          `${BASE_API_URL}/api/v1/user/reset-password/${user.user.id}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              oldPassword: data.oldPassword,
+              newPassword: data.newPassword,
+            }),
+          }
+        )
 
-        // save user to state
-        // userLogin(responseData.user)
+        const responseData = await res.json()
+
+        if (responseData.success !== true) {
+          toast.error(responseData.message)
+        } else {
+          toast.success(responseData.message)
+          setResetPasswordSuccess(true)
+        }
       }
     } catch (error) {
       toast.error("Sorry! Something went wrong.")

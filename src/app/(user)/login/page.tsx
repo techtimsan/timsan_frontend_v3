@@ -12,7 +12,7 @@ export default function Login() {
         <section className="hidden sm:block sm:w-1/2 sm:h-screen sm:overflow-hidden sm:relative">
           <div className="sm:absolute sm:bg-black/50 sm:inset-0" />
           <Image
-            // src={loginRegisterBG}
+            src={loginRegisterBG}
             alt="Login BG"
             className="w-full h-full object-cover object-center"
           />
