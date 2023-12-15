@@ -73,7 +73,7 @@ const FormFields = () => {
         const res = await fetch(
           `${BASE_API_URL}/api/v1/user/reset-password/${user.user.id}`,
           {
-            method: "POST",
+            method: "PATCH",
             headers: {
               "Content-Type": "application/json",
             },

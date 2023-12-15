@@ -2,19 +2,16 @@
 
 import { useState } from "react"
 import { CustomInput } from "@/components/custom"
-import { CustomInputProps, LoginProps, VerifyEmailProps } from "@/types/app"
+import { CustomInputProps, VerifyEmailProps } from "@/types/app"
 import { Button } from "@nextui-org/button"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { BASE_API_URL } from "@/utils/constants"
 import toast from "react-hot-toast"
-import { useRouter } from "next/navigation"
 import { redirect } from "next/navigation"
 import { CircularProgress } from "@nextui-org/progress"
-import { useAuth } from "@/hooks"
 
 const FormFields = () => {
   const [verifySuccess, setVerifySuccess] = useState<boolean>(false)
-  const userLogin = useAuth((state) => state.login)
 
   if (verifySuccess) {
     redirect("/login")
@@ -47,7 +44,7 @@ const FormFields = () => {
     e!.preventDefault()
 
     try {
-      const res = await fetch(`${BASE_API_URL}/api/v1/user/login`, {
+      const res = await fetch(`${BASE_API_URL}/api/v1/user/resend-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,9 +61,6 @@ const FormFields = () => {
       } else {
         toast.success(responseData.message)
         setVerifySuccess(true)
-
-        // save user to state
-        // userLogin(responseData.user)
       }
     } catch (error) {
       toast.error("Sorry! Something went wrong.")
