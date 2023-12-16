@@ -12,22 +12,7 @@ import { Link } from "@nextui-org/link"
 import { ChapterMap } from "@/components/utils"
 import { BASE_API_URL, excos, news } from "@/utils/constants"
 
-async function getData() {
-  const res = await fetch(`${BASE_API_URL}`)
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    console.log("Failed to fetch data")
-  }
-
-  return res.json()
-}
-
 export default async function Home() {
-  const data = await getData()
-  console.log(data)
   return (
     <main>
       <Navbar />
