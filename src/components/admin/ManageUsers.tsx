@@ -24,16 +24,20 @@ export type ManageUsersProps = {
 
 const columns = [
   {
-    key: "firstName",
-    label: "First Name",
-  },
-  {
     key: "lastName",
     label: "Last Name",
   },
   {
+    key: "firstName",
+    label: "First Name",
+  },
+  {
     key: "email",
     label: "Email Address",
+  },
+  {
+    key: "status",
+    label: "Status",
   },
   {
     key: "actions",
@@ -104,6 +108,8 @@ const ManageUsers = ({ users }: ManageUsersProps) => {
           return <span>{user.lastName}</span>;
         case "email":
           return <span>{user.email}</span>;
+        case "status":
+          return <span>{user.emailVerified ? "Verified" : "Not Verified"}</span>;
         case "actions":
           return (
             <div className="relative flex items-center gap-2">

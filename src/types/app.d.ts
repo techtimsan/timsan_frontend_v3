@@ -16,6 +16,18 @@ export type UserProps = {
   lastName: string
   email: string
   conferences: string[]
+  emailVerified: boolean
+}
+
+export type AttendeeProps = {
+  attendee: {
+    id: string
+    firstName: string
+    lastName: string
+    email: string
+  }
+  membershipType: string
+  paymentStatus: "PAYMENT_SUCCESSFUL"
 }
 
 export type EditMemberProfileProps = {

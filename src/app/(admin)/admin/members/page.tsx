@@ -22,6 +22,8 @@ const getAllUsers = async () => {
 export default async function ManageMembers() {
   const data = await getAllUsers()
 
+  console.log(data.data)
+
   return (
     <main className="p-5">
       <ManageUsers users={data.data} />
