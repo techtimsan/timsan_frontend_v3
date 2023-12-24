@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Admin Dashboard - TIMSAN",
-  description: "",
+  description: "TIMSAN National Admin Dashboard...",
 }
 
 export default function AdminDashboardLayout({
@@ -17,7 +17,7 @@ export default function AdminDashboardLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`relative font-lato`}>
         <SidebarProvider>
           {/* dashboard wrapper */}
           <section className="admin__layout">

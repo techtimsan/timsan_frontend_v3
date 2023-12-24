@@ -57,7 +57,7 @@ export default function Login() {
 
           {/* reset password */}
           <div>
-            <Link href="/forgot-password">Forgot Password?</Link>
+            <Link href="/forgot-password" color="foreground">Forgot Password?</Link>
           </div>
         </section>
       </div>

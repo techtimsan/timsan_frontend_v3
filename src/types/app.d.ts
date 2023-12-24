@@ -10,6 +10,14 @@ export type LocationSearchQuery = {
   query: string
 }
 
+export type UserProps = {
+  id: string
+  firstName: string
+  lastName: string
+  email: string
+  conferences: string[]
+}
+
 export type EditMemberProfileProps = {
   firstName: string
   lastName: string

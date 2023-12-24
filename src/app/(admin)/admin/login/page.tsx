@@ -9,7 +9,6 @@ import FormFields from "./FormFields"
 export default function AdminLogin() {
   return (
     <main>
-      <Navbar />
       <section className="custom__section h-screen bg-green">
         <div>
           <Image src={timsanLogo as any} alt="TimsanLogo" />

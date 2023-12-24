@@ -37,27 +37,27 @@ const Sidebar = () => {
     {
       Icon: BiLoaderCircle,
       title: "Approval Status",
-      url: "/admin/dashboard",
+      url: "/admin/approval",
     },
     {
       Icon: ImFolderUpload,
       title: "Upload Courses",
-      url: "/admin/dashboard",
+      url: "/admin/uploads",
     },
     {
       Icon: FaUsers,
       title: "Conference",
-      url: "/admin/dashboard",
+      url: "/admin/conf",
     },
     {
       Icon: RiFileEditFill,
       title: "Manage Users",
-      url: "/admin/dashboard",
+      url: "/admin/members",
     },
     {
       Icon: BiSolidTrashAlt,
       title: "Trash",
-      url: "/admin/dashboard",
+      url: "/admin/trash",
     },
     {
       Icon: BiSolidLogOutCircle,
