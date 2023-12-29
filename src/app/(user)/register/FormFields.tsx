@@ -102,7 +102,6 @@ const FormFields = () => {
         toast.success(responseData.message)
         setRegisterSuccess(true)
       }
-      console.log("api response", responseData)
     } catch (error) {
       toast.error("Sorry! Something went wrong.")
       console.error("Error:", error)

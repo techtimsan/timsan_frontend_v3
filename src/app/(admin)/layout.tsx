@@ -16,19 +16,19 @@ export default function AdminDashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`relative font-lato`}>
+    // <html lang="en">
+    //   <body className={`relative font-lato`}>
+    
         <SidebarProvider>
           {/* dashboard wrapper */}
           <section className="admin__layout">
             <Sidebar />
             <section className="min-h-screen w-full">
               <Navbar />
-              <section className="ml-10">{children}</section>
+              <section className="content__wrapper">{children}</section>
             </section>
           </section>
         </SidebarProvider>
-      </body>
-    </html>
+
   )
 }

@@ -1,19 +1,13 @@
 import { ManageCourseCard } from "@/components/cards";
 import courses from '@/data/courses.json'
+import FormFields from "./FormFields";
 
 export default function CourseUploads() {
   return (
-    <main>
-      <h2>Manage Course</h2>
+    <main className="p-5 sm:px-10">
+      <h2>Add Course</h2>
 
-      {/* search box */}
-
-      {/* cards */}
-      <section className="grid grid-cols-3 gap-5">
-        <ManageCourseCard {...courses[0]} />
-        <ManageCourseCard {...courses[1]} />
-        <ManageCourseCard {...courses[2]} />
-      </section>
+      <FormFields />
     </main>
   )
 }

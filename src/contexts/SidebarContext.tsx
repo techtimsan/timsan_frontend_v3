@@ -7,7 +7,7 @@ type SidebarContextProps = {
 }
 
 const initialValue = {
-  isSidebarCollapsed: false,
+  isSidebarCollapsed: true,
   toggleSidebarCollapseHandler: () => {},
 }
 

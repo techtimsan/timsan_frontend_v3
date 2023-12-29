@@ -56,22 +56,37 @@
     @apply text-green text-lg font-semibold text-center;
   }
 
+  .sidebar.collapsed {
+    width: 80px; /* Adjust the collapsed width as needed */
+  }
+
+  .sidebar.collapsed + .content-wrapper {
+    margin-left: 80px; /* Adjust the collapsed margin as needed */
+  }
+
   .admin__layout {
-    @apply flex h-screen relative;
+    @apply flex;
   }
 
   .collapse__button {
-    @apply absolute z-[2000px] right-0 top-3 border-none bg-green/30 w-8 h-8 rounded-full flex justify-center items-center cursor-pointer text-2xl text-green;
+    @apply absolute z-[2000px] -right-2 top-12 border-none bg-green/30 w-8 h-8 rounded-full flex justify-center items-center cursor-pointer text-2xl text-green;
   }
 
   /* sidebar */
   .sidebar {
-    @apply h-full w-[12rem] bg-gray-100 pr-4 pt-10;
+    @apply fixed h-full sm:w-[200px] border-r-green/50 border-r-1 bg-gray-100 pr-4 pt-24 top-0 left-0;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .sidebar__wrapper {
     @apply relative h-screen;
+  }
+
+  .content__wrapper {
+    flex: 1;
+    margin-left: 200px; /* Set the initial margin to sidebar width */
+    transition: margin-left 0.3s ease;
+    @apply px-10 mb-20
   }
 
   .sidebar__link {

@@ -23,6 +23,7 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { useState } from "react"
 import { useAuth } from "@/hooks"
+import { useRouter } from "next/router"
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -61,6 +62,7 @@ export default function App() {
       url: "/conference",
     },
   ]
+
 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
@@ -112,7 +114,7 @@ export default function App() {
           >
             <DropdownItem>
               <Link
-                href="/institution/oau"
+                href="/chapters/institution"
                 color="foreground"
                 className="w-full"
               >
@@ -120,12 +122,12 @@ export default function App() {
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href="/chapter/state" color="foreground" className="w-full">
+              <Link href="/chapters/state" color="foreground" className="w-full">
                 State
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href="/chapter/zonal" color="foreground" className="w-full">
+              <Link href="/chapters/zonal" color="foreground" className="w-full">
                 Zonal
               </Link>
             </DropdownItem>

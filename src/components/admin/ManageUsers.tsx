@@ -1,7 +1,7 @@
 "use client";
 
 import { UserProps } from "@/types/app";
-import type { Key } from "react";
+import type { ChangeEvent, ChangeEventHandler, Key } from "react";
 import {
   Table,
   TableHeader,
@@ -10,6 +10,7 @@ import {
   TableRow,
   TableCell,
   getKeyValue,
+  Button,
 } from "@nextui-org/react";
 import { Tooltip } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
@@ -17,6 +18,7 @@ import { Pagination } from "@nextui-org/react";
 import { useCallback, useMemo, useState } from "react";
 import { TfiTrash } from "react-icons/tfi";
 import { IoSearchOutline } from "react-icons/io5";
+import { ConfirmDeleteUserModal } from ".";
 
 export type ManageUsersProps = {
   users: UserProps[];
@@ -47,17 +49,45 @@ const columns = [
 
 const ManageUsers = ({ users }: ManageUsersProps) => {
   const [page, setPage] = useState<number>(1);
-  const rowsPerPage = 18;
+  const [filterValue, setFilterValue] = useState<string>("");
+  const [rowsPerPage, setRowsPerPage] = useState<number>(10);
   const pages = Math.ceil(users.length / rowsPerPage);
 
-  const [filterValue, setFilterValue] = useState<string>("");
+  const hasSearchFilter = Boolean(filterValue);
+
+  // filter users by lastname, firstname or email
+  const filteredItems = useMemo(() => {
+    let filteredUsers = [...users];
+
+    if (hasSearchFilter) {
+      filteredUsers = filteredUsers.filter(
+        (user) =>
+          user.lastName.toLowerCase().includes(filterValue.toLowerCase()) ||
+          user.firstName.toLowerCase().includes(filterValue.toLowerCase()) ||
+          user.email.toLowerCase().includes(filterValue.toLowerCase())
+      );
+    }
+
+    return filteredUsers;
+  }, [users, filterValue]);
 
   const items = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
-    return users.slice(start, end);
-  }, [page, users]);
+    return hasSearchFilter
+      ? filteredItems.slice(start, end)
+      : users.slice(start, end);
+  }, [page, rowsPerPage, users, hasSearchFilter, filteredItems]);
+
+  const onRowsPerPageChange = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      const selectedPage = Number(e.target.value);
+      setRowsPerPage(selectedPage);
+      setPage(1);
+    },
+    []
+  );
 
   const onSearchChange = useCallback((value: string) => {
     if (value) {
@@ -81,9 +111,8 @@ const ManageUsers = ({ users }: ManageUsersProps) => {
           <Input
             isClearable
             className="w-full sm:max-w-[44%]"
-            placeholder="Search by name..."
+            placeholder="Search by lastname, firstname or email..."
             startContent={<IoSearchOutline />}
-            value={filterValue}
             onClear={() => onClear()}
             onValueChange={onSearchChange}
           />
@@ -94,6 +123,21 @@ const ManageUsers = ({ users }: ManageUsersProps) => {
           <span className="text-default-400 text-small">
             Total {users.length} users
           </span>
+          <label
+            htmlFor="rowsPerPage"
+            className="flex items-center text-default-400 text-small"
+          >
+            Rows per page:
+            <select
+              id="rowsPerPage"
+              className="bg-transparent outline-none text-default-400 text-small"
+              onChange={onRowsPerPageChange}
+            >
+              <option value={10}>10</option>
+              <option value={20}>20</option>
+              <option value={50}>50</option>
+            </select>
+          </label>
         </div>
       </div>
     );
@@ -109,7 +153,9 @@ const ManageUsers = ({ users }: ManageUsersProps) => {
         case "email":
           return <span>{user.email}</span>;
         case "status":
-          return <span>{user.emailVerified ? "Verified" : "Not Verified"}</span>;
+          return (
+            <span>{user.emailVerified ? "Verified" : "Not Verified"}</span>
+          );
         case "actions":
           return (
             <div className="relative flex items-center gap-2">
@@ -123,22 +169,20 @@ const ManageUsers = ({ users }: ManageUsersProps) => {
                   {/* <EditIcon /> */}
                 </span>
               </Tooltip>
-              <Tooltip color="danger" content="Delete user">
-                <span className="text-lg text-danger cursor-pointer active:opacity-50">
-                  <TfiTrash />
-                </span>
-              </Tooltip>
+              <ConfirmDeleteUserModal />
             </div>
           );
       }
     },
     []
   );
+
   return (
     <Table
-      aria-label="Users"
+      aria-label="Manage Users - Admin Dashboard"
+      isHeaderSticky
+      isStriped
       selectionMode="single"
-      color="success"
       topContent={topContent}
       bottomContent={
         <div className="flex w-full justify-center">

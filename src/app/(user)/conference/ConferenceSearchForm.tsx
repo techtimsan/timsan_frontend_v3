@@ -100,7 +100,6 @@ export const ConferenceSearchForm = () => {
         toast.success(responseData.message)
         onClose()
       }
-      console.log("api response", responseData)
     } catch (error) {
       toast.error("Sorry! Something went wrong.")
       console.error("Error:", error)
@@ -109,8 +108,6 @@ export const ConferenceSearchForm = () => {
 
   const onSuccess = (reference: any) => {
     // Implementation for whatever you want to do with reference and after success call.
-
-    console.log(reference)
 
     handleConferenceRegister({
       emailAddress: user?.email as string,

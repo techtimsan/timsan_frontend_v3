@@ -1,18 +1,35 @@
-import { Footer, HeroSection, Navbar } from "@/components/ui"
-import { Button } from "@nextui-org/button"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Footer, HeroSection, Navbar } from "@/components/ui";
+import { Button } from "@nextui-org/button";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import {
   ExcoCard,
+  ExcoView,
   HeroCarouselCard,
   HeroCarouselSlider,
   NewsCard,
-} from "@/components/cards"
-import { Link } from "@nextui-org/link"
-import { ChapterMap } from "@/components/utils"
-import { BASE_API_URL, excos, news } from "@/utils/constants"
+} from "@/components/cards";
+import { Link } from "@nextui-org/link";
+import { ChapterMap } from "@/components/utils";
+import { BASE_API_URL, excos, news } from "@/utils/constants";
+import { NewsProps } from "@/types/app";
+
+const getNews = async (): Promise<NewsProps[]> => {
+  const resp = await fetch(`${BASE_API_URL}/api/v1/news`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const data = await resp.json();
+  return data.data as NewsProps[];
+};
 
 export default async function Home() {
+  const news = await getNews();
+  
+
   return (
     <main>
       <Navbar />
@@ -46,11 +63,7 @@ export default async function Home() {
         <h3>EXECUTIVES</h3>
         <h4 className="text-green text-center">Our National Executives</h4>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-10 my-5 sm:my-10">
-          {excos.map((exco) => (
-            <ExcoCard key={exco.name} {...exco} />
-          ))}
-        </div>
+        <ExcoView />
       </section>
 
       {/* google map */}
@@ -61,5 +74,5 @@ export default async function Home() {
       <ChapterMap />
       <Footer />
     </main>
-  )
+  );
 }

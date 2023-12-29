@@ -64,7 +64,6 @@ const FormFields = () => {
   const handleEditMember: SubmitHandler<EditMemberProfileProps> = (data, e) => {
     e!.preventDefault()
 
-    console.log(data)
   }
 
   return (

@@ -42,8 +42,6 @@ const AnnualDueForm = () => {
 
   const handleAnnualDue: SubmitHandler<AnnualDueFormProps> = (data, e) => {
     e!.preventDefault()
-
-    console.log(data)
   }
   return (
     <form onSubmit={handleSubmit(handleAnnualDue)} className="mt-10">

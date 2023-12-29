@@ -25,7 +25,7 @@ const CustomInput = <T extends FieldValues>({
     <Input
       label={label}
       labelPlacement="outside"
-      className={`mb-6 text-gray-900 w-full ${customStyle}`}
+      className={customStyle ? customStyle : "" + `mb-6 text-gray-900 w-full`}
       isRequired={required}
       type={type === "password" && isVisible ? "text" : type}
       id={label ? `${label.toLowerCase()}` : name}
